@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <!-- todo ViewModel Если пустой город, то меняем background на @drawable/bg_auth_edit -->
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <EditText
+            android:id="@+id/edit_user_city"
+            android:layout_width="0dp"
+            android:layout_height="00dp"
+            android:background="@drawable/bg_register_edit_top"
+            android:hint="@string/user_city"
+            android:inputType="text"
+            android:paddingEnd="20dp"
+            android:paddingStart="20dp"
+            android:textColor="@color/whiteColor100"
+            android:textColorHint="@color/authHintColor"
+            app:layout_constraintBottom_toTopOf="@+id/guideline_edit_user_city_bottom"
+            app:layout_constraintEnd_toStartOf="@id/guideline_end"
+            app:layout_constraintStart_toEndOf="@id/guideline_start"
+            app:layout_constraintTop_toBottomOf="@+id/guideline_edit_user_city_top"
+            app:layout_constraintVertical_bias="0.00"
+            app:layout_constraintVertical_chainStyle="packed" />
+
+        <View
+            android:id="@+id/separator"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:background="@color/whiteColor100"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edit_user_city" />
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/city_list"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toTopOf="@id/guideline_city_list_bottom"
+            app:layout_constraintEnd_toStartOf="@id/guideline_end"
+            app:layout_constraintStart_toEndOf="@id/guideline_start"
+            app:layout_constraintTop_toBottomOf="@+id/separator"
+            tools:listitem="@layout/item_city_list" />
+
+        <!-- Guidelines -->
+
+        <android.support.constraint.Guideline
+            android:id="@+id/guideline_start"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="@dimen/common_margin_start" />
+
+        <android.support.constraint.Guideline
+            android:id="@+id/guideline_end"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="@dimen/common_margin_end" />
+
+        <android.support.constraint.Guideline
+            android:id="@+id/guideline_edit_user_city_top"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.12" />
+
+        <android.support.constraint.Guideline
+            android:id="@+id/guideline_edit_user_city_bottom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.32" />
+
+        <android.support.constraint.Guideline
+            android:id="@+id/guideline_city_list_bottom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="1" />
+
+    </android.support.constraint.ConstraintLayout>
+
+</layout>

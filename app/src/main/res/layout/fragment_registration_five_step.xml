@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:background="@drawable/welcome_bg_crop_2">
+
+        <EditText
+            android:id="@+id/edit_user_first_password"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/bg_auth_edit"
+            android:hint="@string/user_first_password"
+            android:inputType="textPassword"
+            android:paddingEnd="20dp"
+            android:paddingStart="20dp"
+            android:textColor="@color/whiteColor100"
+            android:textColorHint="@color/authHintColor"
+            app:layout_constraintBottom_toTopOf="@id/guideline_edit_user_name_bottom"
+            app:layout_constraintEnd_toStartOf="@id/guideline_end"
+            app:layout_constraintStart_toEndOf="@id/guideline_start"
+            app:layout_constraintTop_toBottomOf="@id/guideline_edit_user_name_top" />
+
+        <EditText
+            android:id="@+id/edit_user_second_password"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/bg_auth_edit"
+            android:hint="@string/user_second_password"
+            android:inputType="textPassword"
+            android:paddingEnd="20dp"
+            android:paddingStart="20dp"
+            android:textColor="@color/whiteColor100"
+            android:textColorHint="@color/authHintColor"
+            app:layout_constraintBottom_toTopOf="@id/guideline_edit_user_second_name_bottom"
+            app:layout_constraintEnd_toStartOf="@id/guideline_end"
+            app:layout_constraintStart_toEndOf="@id/guideline_start"
+            app:layout_constraintTop_toBottomOf="@id/guideline_edit_user_second_name_top" />
+
+        <!-- Guidelines -->
+
+        <android.support.constraint.Guideline
+            android:id="@+id/guideline_start"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="@dimen/common_margin_start" />
+
+        <android.support.constraint.Guideline
+            android:id="@+id/guideline_end"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="@dimen/common_margin_end" />
+
+        <android.support.constraint.Guideline
+            android:id="@+id/guideline_edit_user_name_top"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.12" />
+
+        <android.support.constraint.Guideline
+            android:id="@+id/guideline_edit_user_name_bottom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.32" />
+
+        <android.support.constraint.Guideline
+            android:id="@+id/guideline_edit_user_second_name_top"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.42" />
+
+        <android.support.constraint.Guideline
+            android:id="@+id/guideline_edit_user_second_name_bottom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.62" />
+
+    </android.support.constraint.ConstraintLayout>
+
+</layout>

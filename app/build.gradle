@@ -1,0 +1,72 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'kotlin-android-extensions'
+
+android {
+    compileSdkVersion buildVersions.COMPILE_SDK_VERSION
+
+    defaultConfig {
+        applicationId "palestra.palestra_kotlin_v12"
+        minSdkVersion buildVersions.MIN_SDK_VERSION
+        targetSdkVersion buildVersions.TARGET_SDK_VERIONS
+        versionCode buildVersions.VERSION_CODE
+        versionName buildVersions.VERSION_NAME
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    dataBinding {
+        enabled = true
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    //otherModules
+    implementation project(":design")
+
+    //Kotlin
+    implementation jetbrains.kotlin
+
+    //Support
+    implementation support.appcompat7
+    implementation support.design
+    implementation support.constraintLayout
+    implementation support.recyclerview
+
+    kapt "com.android.databinding:compiler:3.0.0-alpha3"
+
+    //Parceller
+    implementation parceller.parceller
+    annotationProcessor parceller.parcellerAnnotProc
+
+    //GreenDao
+//    implementation greenRobot.greenDao
+
+    //Network
+    implementation network.gson
+
+    //rxJava2
+    implementation rx.rxJava2
+    implementation rx.rxAndroid
+    implementation rx.rxJava2debug
+    implementation rx.rxBinding2
+
+    //tests
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    testImplementation test.junit
+    androidTestImplementation test.runner
+    androidTestImplementation test.espresso
+}

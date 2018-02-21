@@ -1,0 +1,59 @@
+<resources>
+    <string name="app_name">Palestra</string>
+
+    <!-- Welcome Card -->
+    <string name="first_card_title">Привет. Я Palestra.\nЯ площадка для встреч.</string>
+    <string name="first_card_description">Изучайте новые места, общайтесь с другими пользователями, создавайте события.</string>
+    <string name="second_card_title">Найди\nединомышленников</string>
+    <string name="second_card_description">Palestra позволит тебе найти знакомых \nпо интересам.</string>
+    <string name="third_card_title">Создай свое событие и оторвись как следует</string>
+    <string name="third_card_description">Отметь на карте место проведения твоего мероприятия и жди новых знакомых.</string>
+    <string name="enter">Войти</string>
+
+    <!-- Auth activity -->
+    <string name="user_phone">Ваш номер</string>
+    <string name="user_password">Пароль</string>
+    <string name="register_question">У вас нет аккаунта?</string>
+    <string name="goto_register">&#032;<u>Зарегистрируйтесь</u></string>
+
+    <!-- Register activity -->
+    <string name="next">Далее</string>
+    <string name="nearly">Еще один рывок!</string>
+
+    <!-- Fragment register first step -->
+    <string name="user_first_name">Имя</string>
+    <string name="user_second_name">Фамилия</string>
+
+    <!-- Fragment register second step -->
+    <string name="user_city">Ваш город</string>
+
+    <!-- Fragment register third step -->
+    <string name="user_phone_register">Ваш телефон</string>
+    <string name="title_load_avatar">Загрузите аватарку вашего профиля</string>
+
+    <!-- Fragment register four step -->
+    <string name="title_enter_birthday">Укажите дату рождения</string>
+
+    <!-- Fragment register five step -->
+    <string name="user_first_password">Пароль</string>
+    <string name="user_second_password">Повторите пароль</string>
+    <string name="user_rule_title">Регистрируясь, вы соглашаетесь с нашими</string>
+    <string name="user_rule_conditions"><u>Условиями</u></string>
+    <string name="user_rule_privacy_policy">и <u>Политикой конфиденциальности</u>.</string>
+
+
+    <string-array name="hour_display">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
+    </string-array>
+</resources>

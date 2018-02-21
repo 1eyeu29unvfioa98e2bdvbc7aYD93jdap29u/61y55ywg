@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingEnd="10dp"
+        android:paddingStart="40dp"
+        android:background="#44f0330f"
+        tools:ignore="RtlSymmetry">
+
+        <ImageView
+            android:id="@+id/img_person_photo"
+            android:layout_width="@dimen/person_photo_size"
+            android:layout_height="@dimen/person_photo_size"
+            android:background="@drawable/person_photo_background_temp"/>
+
+        <!--todo приделать стиль-->
+
+        <TextView
+            android:id="@+id/txt_person_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:textColor="@color/colorGray1"
+            android:textSize="18sp"
+            tools:text="Мария Огурцова"/>
+
+    </LinearLayout>
+
+</layout>

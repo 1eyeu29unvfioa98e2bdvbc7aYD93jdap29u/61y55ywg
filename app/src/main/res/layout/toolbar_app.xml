@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+    </data>
+
+    <android.support.v7.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        app:navigationIcon="@drawable/ic_back_arrow"
+        android:background="@color/whiteColor100">
+
+        <TextView
+            android:id="@+id/title_text"
+            android:gravity="center"
+            android:textAllCaps="true"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Идут (13)"/>
+
+    </android.support.v7.widget.Toolbar>
+
+</layout>

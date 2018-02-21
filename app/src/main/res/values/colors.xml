@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">@color/authHintColor</color>
+
+    <!-- Common Colors -->
+    <color name="blackColor100">#000000</color>   <!-- 100% -->
+
+    <color name="whiteColor100">#FFFFFFFF</color>   <!-- 100% -->
+    <color name="whiteColor20">#80FFFFFF</color>    <!-- 20% -->
+
+    <color name="greenColor100">#2ED573</color>     <!-- 100% -->
+
+    <color name="colorGray1">#333333</color>
+    <color name="colorGray2">#9EA4AF</color>
+    <color name="colorGray3">#E0E0E0</color>
+
+    <!-- Welcome Card -->
+    <color name="welcomeCardTitleColor">#333333</color>
+    <color name="welcomeCardDescriptionColor">#BDBDBD</color>
+
+    <color name="welcomeCardSliderDotActive">#FFFFFF</color>
+    <color name="welcomeCardSliderDotInactive">#303030</color>
+    <color name="welcomeCardButtonBackground">@color/greenColor100</color>
+
+    <!-- Auth activity -->
+    <color name="authHintColor">#9EA4AF</color>
+    <color name="authBackgroundShapeEdit">#33FFFFFF</color>
+
+    <!-- Top buttons color -->
+    <color name="color_top_btn_active">#333333</color>
+    <color name="color_top_btn_inactive">#E0E0E0</color>
+
+    <!-- Bottom navigation panel -->
+    <color name="color_my_person_shape">#E0E0E0</color>
+
+    <!-- Event card -->
+    <color name="color_event_title">@color/colorGray1</color>
+    <color name="color_event_coordinate">@color/colorGray2</color>
+    <color name="color_event_time">@color/colorGray2</color>
+    <color name="color_event_category">@color/colorGray3</color>
+    <color name="color_event_olg">@color/colorGray3</color>
+
+    <!-- EventType colors -->
+    <color name="color_no_fun_event_type">#FF5555</color>
+    <color name="color_fun_event_type">#2ED573</color>
+    <color name="color_middle_fun_event_type">#FF55ff</color>
+
+    <!-- Activity create event -->
+    <color name="color_text_btn_next">#2ED573</color>
+    <color name="color_top_divider">#F9F9F9</color>
+    <color name="color_edit_txt_background">#F9F9F9</color>
+    <color name="color_txt_help">@color/colorGray2</color>
+    <color name="color_txt_title">@color/colorGray1</color>
+    <color name="color_old_checked">#2ED573</color>
+    <color name="color_old_unchecked">#E0E0E0</color>
+
+</resources>

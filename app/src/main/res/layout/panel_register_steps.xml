@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <!-- todo изменять тип отображаемого элемента -->
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <include
+            android:id="@+id/include_first_step"
+            layout="@layout/item_register_step"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            app:layout_constraintEnd_toStartOf="@+id/include_second_step"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <include
+            android:id="@+id/include_second_step"
+            layout="@layout/item_register_step"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            app:layout_constraintBottom_toBottomOf="@+id/include_first_step"
+            app:layout_constraintEnd_toStartOf="@+id/include_third_step"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/include_first_step"
+            app:layout_constraintTop_toTopOf="@+id/include_first_step" />
+
+        <include
+            android:id="@+id/include_third_step"
+            layout="@layout/item_register_step"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            app:layout_constraintBottom_toBottomOf="@+id/include_second_step"
+            app:layout_constraintEnd_toStartOf="@+id/include_four_step"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/include_second_step"
+            app:layout_constraintTop_toTopOf="@+id/include_second_step" />
+
+        <include
+            android:id="@+id/include_four_step"
+            layout="@layout/item_register_step"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            app:layout_constraintBottom_toBottomOf="@+id/include_third_step"
+            app:layout_constraintEnd_toStartOf="@+id/include_five_step"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/include_third_step"
+            app:layout_constraintTop_toTopOf="@+id/include_third_step" />
+
+        <include
+            android:id="@+id/include_five_step"
+            layout="@layout/item_register_step"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            app:layout_constraintBottom_toBottomOf="@+id/include_four_step"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/include_four_step"
+            app:layout_constraintTop_toTopOf="@+id/include_four_step" />
+
+    </android.support.constraint.ConstraintLayout>
+</layout>

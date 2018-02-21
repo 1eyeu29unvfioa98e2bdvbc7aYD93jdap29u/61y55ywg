@@ -1,0 +1,26 @@
+<resources>
+
+    <style name="AppBaseTheme.WelcomeStyle">
+        <item name="android:windowTranslucentStatus">true</item>
+    </style>
+
+    <style name="AppBaseTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/whiteColor100</item>
+        <item name="colorPrimaryDark">@color/whiteColor100</item>
+        <item name="colorAccent">@color/colorAccent</item>
+
+        <item name="android:textViewStyle">@style/TextView.Base</item>
+    </style>
+
+    <style name="TextView.Base" parent="android:Widget.TextView">
+        <item name="android:fontFamily">@font/open_sans_regular</item>
+    </style>
+
+    <!-- Event list top buttons -->
+    <style name="TopButtons" parent="android:Widget.TextView">
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:textAllCaps">true</item>
+    </style>
+
+</resources>

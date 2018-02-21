@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <!-- todo ViewModel : bindingattribute: выбор даты,
+         если выбрали дату больше чем есть в месяце, то выставляем макс т месяца -->
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToPadding="false">
+
+        <TextView
+            android:id="@+id/txt_title_enter_birthday"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="@string/title_enter_birthday"
+            android:textAlignment="center"
+            android:textColor="@color/whiteColor100"
+            android:textSize="14sp"
+            app:autoSizeMaxTextSize="14sp"
+            app:autoSizeMinTextSize="10sp"
+            app:autoSizeStepGranularity="2sp"
+            app:autoSizeTextType="uniform"
+            app:layout_constraintBottom_toTopOf="@id/guideline_title_enter_birthday"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/txt_user_birthday"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="Вт, 1 август, 2017"
+            android:textAlignment="center"
+            android:textColor="@color/whiteColor20"
+            android:textSize="12sp"
+            app:autoSizeMaxTextSize="12sp"
+            app:autoSizeMinTextSize="8sp"
+            app:autoSizeStepGranularity="2sp"
+            app:autoSizeTextType="uniform"
+            app:layout_constraintBottom_toTopOf="@id/guideline_user_birthday_bottom"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:background="@color/whiteColor20"
+            app:layout_constraintTop_toBottomOf="@id/guideline_number_pickers_top"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:focusableInTouchMode="false"/>
+
+        <!-- todo bindingAttribute  -->
+        <palestra.design.widgets.NumberPickerView
+            android:id="@+id/npv_day"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="-8dp"
+            android:background="@drawable/bg_npv_top_bottom_user_birthday"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/npv_month"
+            app:layout_constraintHorizontal_chainStyle="spread"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/guideline_number_pickers_top"
+            app:npv_DividerColor="@color/authBackgroundShapeEdit"
+            app:npv_MaxValue="4"
+            app:npv_MinValue="0"
+            app:npv_ShowCount="5"
+            app:npv_ShowDivider="true"
+            app:npv_TextArray="@array/hour_display"
+            app:npv_TextColorSelected="@color/greenColor100"
+            app:npv_TextSizeSelected="20sp"
+            app:npv_WrapSelectorWheel="false" />
+
+        <palestra.design.widgets.NumberPickerView
+            android:id="@+id/npv_month"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/bg_npv_center_user_birthday"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/npv_year"
+            app:layout_constraintStart_toEndOf="@id/npv_day"
+            app:layout_constraintTop_toBottomOf="@id/guideline_number_pickers_top"
+            app:npv_DividerColor="@color/authBackgroundShapeEdit"
+            app:npv_MaxValue="4"
+            app:npv_MinValue="0"
+            app:npv_ShowCount="5"
+            app:npv_ShowDivider="true"
+            app:npv_TextArray="@array/hour_display"
+            app:npv_TextColorSelected="@color/greenColor100"
+            app:npv_TextSizeSelected="20sp"
+            app:npv_WrapSelectorWheel="false" />
+
+        <palestra.design.widgets.NumberPickerView
+            android:id="@+id/npv_year"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/bg_npv_top_bottom_user_birthday"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/npv_month"
+            app:layout_constraintTop_toBottomOf="@id/guideline_number_pickers_top"
+            app:npv_DividerColor="@color/authBackgroundShapeEdit"
+            app:npv_MaxValue="4"
+            app:npv_MinValue="0"
+            app:npv_ShowCount="5"
+            app:npv_ShowDivider="true"
+            app:npv_TextArray="@array/hour_display"
+            app:npv_TextColorSelected="@color/greenColor100"
+            app:npv_TextSizeSelected="20sp"
+            app:npv_WrapSelectorWheel="false" />
+
+        <!-- Guideline -->
+
+        <android.support.constraint.Guideline
+            android:id="@+id/guideline_title_enter_birthday"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.06" />
+
+        <android.support.constraint.Guideline
+            android:id="@+id/guideline_user_birthday_bottom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.15" />
+
+        <android.support.constraint.Guideline
+            android:id="@+id/guideline_number_pickers_top"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.2" />
+
+
+    </android.support.constraint.ConstraintLayout>
+
+</layout>

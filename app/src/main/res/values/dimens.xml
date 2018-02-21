@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Common Dimens -->
+    <item name="common_margin_start" type="dimen" format="float">0.07</item>
+    <item name="common_margin_end" type="dimen" format="float">0.93</item>
+    <item name="common_margin_top" type="dimen" format="float">0.08</item>
+    <item name="common_margin_logo_bottom" type="dimen" format="float">0.22</item>
+
+    <!-- Item person list -->
+    <dimen name="person_photo_size">44dp</dimen>
+
+    <!-- Item event list -->
+    <dimen name="event_horizontal_divider_height">16dp</dimen>
+
+    <!-- Bottom navigation panel -->
+    <dimen name="bottom_navigation_panel_height">50dp</dimen>
+
+</resources>
