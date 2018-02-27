@@ -35,9 +35,13 @@ ext.buildVersions = [
 ]
 
 ext.versions = [
-        androidSupport        : "27.0.2",
+        //design
         constraintLayout      : "1.0.2",
-//        greenDao              : "3.2.2",
+        customBottomNavigation: "2.0.4",
+
+        //common
+        androidSupport        : "27.0.2",
+        //greenDao              : "3.2.2",
         gson                  : "2.8.2",
         parceller             : "1.1.9",
 
@@ -58,6 +62,10 @@ ext.versions = [
 
 ext.jetbrains = [
         kotlin          : "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
+]
+
+ext.design = [
+        bottomNavigation: "com.ashokvarma.android:bottom-navigation-bar:$versions.customBottomNavigation"
 ]
 
 ext.support = [

@@ -40,6 +40,9 @@ dependencies {
     //Kotlin
     implementation jetbrains.kotlin
 
+    //design
+    implementation design.bottomNavigation
+
     //Support
     implementation support.appcompat7
     implementation support.design
