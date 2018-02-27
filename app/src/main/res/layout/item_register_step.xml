@@ -27,7 +27,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:text="1"
-            tools:textColor="@color/whiteColor100" />
+            tools:textColor="@color/colorWhite100" />
 
         <ImageView
             android:id="@+id/img_step_completed"

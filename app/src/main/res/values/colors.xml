@@ -5,16 +5,17 @@
     <color name="colorAccent">@color/authHintColor</color>
 
     <!-- Common Colors -->
-    <color name="blackColor100">#000000</color>   <!-- 100% -->
+    <color name="colorBlack100">#000000</color>   <!-- 100% -->
 
-    <color name="whiteColor100">#FFFFFFFF</color>   <!-- 100% -->
-    <color name="whiteColor20">#80FFFFFF</color>    <!-- 20% -->
+    <color name="colorWhite100">#FFFFFFFF</color>   <!-- 100% -->
+    <color name="colorWhite20">#80FFFFFF</color>    <!-- 20% -->
 
-    <color name="greenColor100">#2ED573</color>     <!-- 100% -->
+    <color name="colorGreen100">#2ED573</color>     <!-- 100% -->
 
     <color name="colorGray1">#333333</color>
     <color name="colorGray2">#9EA4AF</color>
     <color name="colorGray3">#E0E0E0</color>
+    <color name="colorGray4">#F2F2F2</color>
 
     <!-- Welcome Card -->
     <color name="welcomeCardTitleColor">#333333</color>
@@ -22,7 +23,7 @@
 
     <color name="welcomeCardSliderDotActive">#FFFFFF</color>
     <color name="welcomeCardSliderDotInactive">#303030</color>
-    <color name="welcomeCardButtonBackground">@color/greenColor100</color>
+    <color name="welcomeCardButtonBackground">@color/colorGreen100</color>
 
     <!-- Auth activity -->
     <color name="authHintColor">#9EA4AF</color>

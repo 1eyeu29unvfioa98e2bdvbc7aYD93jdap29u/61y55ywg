@@ -21,12 +21,12 @@
             android:inputType="phone"
             android:paddingEnd="20dp"
             android:paddingStart="20dp"
-            android:textColor="@color/whiteColor100"
+            android:textColor="@color/colorWhite100"
             android:textColorHint="@color/authHintColor"
-            app:layout_constraintBottom_toTopOf="@id/guideline_edit_user_name_bottom"
-            app:layout_constraintEnd_toStartOf="@id/guideline_end"
-            app:layout_constraintStart_toEndOf="@id/guideline_start"
-            app:layout_constraintTop_toBottomOf="@id/guideline_edit_user_name_top" />
+            app:layout_constraintBottom_toTopOf="@+id/guideline_edit_user_name_bottom"
+            app:layout_constraintEnd_toStartOf="@+id/guideline_end"
+            app:layout_constraintStart_toEndOf="@+id/guideline_start"
+            app:layout_constraintTop_toBottomOf="@+id/guideline_edit_user_name_top" />
 
         <EditText
             android:id="@+id/edit_user_second_name"
@@ -37,12 +37,12 @@
             android:inputType="textPassword"
             android:paddingEnd="20dp"
             android:paddingStart="20dp"
-            android:textColor="@color/whiteColor100"
+            android:textColor="@color/colorWhite100"
             android:textColorHint="@color/authHintColor"
-            app:layout_constraintBottom_toTopOf="@id/guideline_edit_user_second_name_bottom"
-            app:layout_constraintEnd_toStartOf="@id/guideline_end"
-            app:layout_constraintStart_toEndOf="@id/guideline_start"
-            app:layout_constraintTop_toBottomOf="@id/guideline_edit_user_second_name_top" />
+            app:layout_constraintBottom_toTopOf="@+id/guideline_edit_user_second_name_bottom"
+            app:layout_constraintEnd_toStartOf="@+id/guideline_end"
+            app:layout_constraintStart_toEndOf="@+id/guideline_start"
+            app:layout_constraintTop_toBottomOf="@+id/guideline_edit_user_second_name_top" />
 
         <!-- Guidelines -->
 

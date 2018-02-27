@@ -26,9 +26,9 @@
             android:contentDescription="@string/app_name"
             android:src="@drawable/logo_palestra"
             app:layout_constraintBottom_toTopOf="@+id/guideline_logo_bottom"
-            app:layout_constraintEnd_toStartOf="@id/guideline_end"
-            app:layout_constraintStart_toEndOf="@id/guideline_start"
-            app:layout_constraintTop_toBottomOf="@id/guideline_top" />
+            app:layout_constraintEnd_toStartOf="@+id/guideline_end"
+            app:layout_constraintStart_toEndOf="@+id/guideline_start"
+            app:layout_constraintTop_toBottomOf="@+id/guideline_top" />
 
         <TextView
             android:id="@+id/txt_nearly"
@@ -36,21 +36,21 @@
             android:layout_height="wrap_content"
             android:text="@string/nearly"
             android:textAlignment="center"
-            android:textColor="@color/whiteColor20"
+            android:textColor="@color/colorWhite20"
             android:textSize="14sp"
-            app:layout_constraintEnd_toStartOf="@id/guideline_end"
-            app:layout_constraintStart_toEndOf="@id/guideline_start"
-            app:layout_constraintTop_toBottomOf="@id/guideline_txt_nearly_bottom" />
+            app:layout_constraintEnd_toStartOf="@+id/guideline_end"
+            app:layout_constraintStart_toEndOf="@+id/guideline_start"
+            app:layout_constraintTop_toBottomOf="@+id/guideline_txt_nearly_bottom" />
 
         <include
             android:id="@+id/include_panel_register_steps"
             layout="@layout/panel_register_steps"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            app:layout_constraintBottom_toTopOf="@id/guideline_compete_bottom_frame_top"
-            app:layout_constraintEnd_toStartOf="@id/guideline_end"
-            app:layout_constraintStart_toEndOf="@id/guideline_start"
-            app:layout_constraintTop_toBottomOf="@id/guideline_logo_bottom"
+            app:layout_constraintBottom_toTopOf="@+id/guideline_compete_bottom_frame_top"
+            app:layout_constraintEnd_toStartOf="@+id/guideline_end"
+            app:layout_constraintStart_toEndOf="@+id/guideline_start"
+            app:layout_constraintTop_toBottomOf="@+id/guideline_logo_bottom"
             app:layout_constraintVertical_bias="0.5"
             tools:background="@color/colorAccent" />
 
@@ -58,10 +58,10 @@
             android:id="@+id/fragment_container"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            app:layout_constraintBottom_toTopOf="@id/guideline_frame_bottom"
+            app:layout_constraintBottom_toTopOf="@+id/guideline_frame_bottom"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/guideline_compete_bottom_frame_top"
+            app:layout_constraintTop_toBottomOf="@+id/guideline_compete_bottom_frame_top"
             tools:background="@drawable/bg_auth_edit" />
 
         <include
@@ -69,9 +69,9 @@
             layout="@layout/btn_enter_next_actions"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            app:layout_constraintBottom_toBottomOf="@id/guideline_btn_bottom"
-            app:layout_constraintEnd_toStartOf="@id/guideline_end"
-            app:layout_constraintStart_toEndOf="@id/guideline_start"
+            app:layout_constraintBottom_toBottomOf="@+id/guideline_btn_bottom"
+            app:layout_constraintEnd_toStartOf="@+id/guideline_end"
+            app:layout_constraintStart_toEndOf="@+id/guideline_start"
             app:layout_constraintTop_toBottomOf="@+id/guideline_btn_top" />
 
         <!-- GuideLines -->

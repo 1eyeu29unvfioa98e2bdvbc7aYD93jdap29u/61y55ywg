@@ -10,7 +10,7 @@
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="56dp"
-        android:background="@color/whiteColor100"
+        android:background="@color/colorWhite100"
         android:elevation="1dp"
         app:navigationIcon="@drawable/ic_cancel">
 
@@ -21,8 +21,10 @@
             tools:ignore="RtlSymmetry">
 
             <TextView
+                android:id="@+id/btn_next"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_height="match_parent"
                 android:layout_gravity="end|center_vertical"
                 android:text="Далее"
                 android:textAllCaps="true"

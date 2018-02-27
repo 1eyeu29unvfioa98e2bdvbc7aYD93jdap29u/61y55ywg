@@ -20,7 +20,7 @@
             android:layout_height="wrap_content"
             android:paddingEnd="10dp"
             android:text="@string/enter"
-            android:textColor="@color/whiteColor100"
+            android:textColor="@color/colorWhite100"
             android:textSize="18sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -35,7 +35,7 @@
             android:layout_height="wrap_content"
             android:src="@drawable/ic_arrow_right"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toEndOf="@id/txt_enter"
+            app:layout_constraintStart_toEndOf="@+id/txt_enter"
             app:layout_constraintTop_toTopOf="parent" />
 
     </android.support.constraint.ConstraintLayout>

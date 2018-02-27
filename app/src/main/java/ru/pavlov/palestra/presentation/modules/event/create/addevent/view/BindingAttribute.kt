@@ -8,7 +8,6 @@ import android.util.DisplayMetrics
 import android.util.TypedValue
 import android.widget.ImageView
 import android.widget.LinearLayout
-import android.widget.TextView
 import palestra.kotlin.R
 import ru.pavlov.palestra.data.models.EventCategories
 import ru.pavlov.palestra.data.models.EventsType
@@ -39,7 +38,7 @@ fun categoryChecked(view: ImageView, event: EventCategories) {
         false -> {
             when (viewBackground) {
                 is GradientDrawable -> {
-                    viewBackground.setColor(ContextCompat.getColor(context, R.color.whiteColor100))
+                    viewBackground.setColor(ContextCompat.getColor(context, R.color.colorWhite100))
                     viewBackground.setStroke(STROKE_SIZE, color)
                 }
             }

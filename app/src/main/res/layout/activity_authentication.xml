@@ -15,10 +15,10 @@
             layout="@layout/item_logo"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            app:layout_constraintBottom_toTopOf="@id/guideline_logo_bottom"
-            app:layout_constraintEnd_toStartOf="@id/guideline_end"
-            app:layout_constraintStart_toEndOf="@id/guideline_start"
-            app:layout_constraintTop_toBottomOf="@id/guideline_top" />
+            app:layout_constraintBottom_toTopOf="@+id/guideline_logo_bottom"
+            app:layout_constraintEnd_toStartOf="@+id/guideline_end"
+            app:layout_constraintStart_toEndOf="@+id/guideline_start"
+            app:layout_constraintTop_toBottomOf="@+id/guideline_top" />
 
         <EditText
             android:id="@+id/edit_user_number"
@@ -31,10 +31,10 @@
             android:padding="20dp"
             android:textColor="@color/authHintColor"
             android:textColorHint="@color/authHintColor"
-            app:layout_constraintBottom_toTopOf="@id/edit_user_password"
-            app:layout_constraintEnd_toStartOf="@id/guideline_end"
-            app:layout_constraintStart_toEndOf="@id/guideline_start"
-            app:layout_constraintTop_toBottomOf="@id/guideline_logo_bottom"
+            app:layout_constraintBottom_toTopOf="@+id/edit_user_password"
+            app:layout_constraintEnd_toStartOf="@+id/guideline_end"
+            app:layout_constraintStart_toEndOf="@+id/guideline_start"
+            app:layout_constraintTop_toBottomOf="@+id/guideline_logo_bottom"
             app:layout_constraintVertical_chainStyle="packed" />
 
         <EditText
@@ -47,19 +47,19 @@
             android:padding="20dp"
             android:textColor="@color/authHintColor"
             android:textColorHint="@color/authHintColor"
-            app:layout_constraintBottom_toTopOf="@id/guideline_btn_top"
-            app:layout_constraintEnd_toStartOf="@id/guideline_end"
-            app:layout_constraintStart_toEndOf="@id/guideline_start"
-            app:layout_constraintTop_toBottomOf="@id/edit_user_number" />
+            app:layout_constraintBottom_toTopOf="@+id/guideline_btn_top"
+            app:layout_constraintEnd_toStartOf="@+id/guideline_end"
+            app:layout_constraintStart_toEndOf="@+id/guideline_start"
+            app:layout_constraintTop_toBottomOf="@+id/edit_user_number" />
 
         <include
             android:id="@+id/include_btn_enter"
             layout="@layout/btn_enter_next_actions"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            app:layout_constraintBottom_toBottomOf="@id/guideline_btn_bottom"
-            app:layout_constraintEnd_toStartOf="@id/guideline_end"
-            app:layout_constraintStart_toEndOf="@id/guideline_start"
+            app:layout_constraintBottom_toBottomOf="@+id/guideline_btn_bottom"
+            app:layout_constraintEnd_toStartOf="@+id/guideline_end"
+            app:layout_constraintStart_toEndOf="@+id/guideline_start"
             app:layout_constraintTop_toBottomOf="@+id/guideline_btn_top" />
 
         <TextView
@@ -67,23 +67,23 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/register_question"
-            android:textColor="@color/whiteColor100"
+            android:textColor="@color/colorWhite100"
             android:textSize="14sp"
-            app:layout_constraintBottom_toTopOf="@id/guideline_register_bottom"
+            app:layout_constraintBottom_toTopOf="@+id/guideline_register_bottom"
             app:layout_constraintEnd_toStartOf="@+id/txt_goto_register"
             app:layout_constraintHorizontal_chainStyle="packed"
-            app:layout_constraintStart_toEndOf="@id/guideline_start" />
+            app:layout_constraintStart_toEndOf="@+id/guideline_start" />
 
         <TextView
             android:id="@+id/txt_goto_register"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/goto_register"
-            android:textColor="@color/whiteColor100"
+            android:textColor="@color/colorWhite100"
             android:textSize="14sp"
-            app:layout_constraintBottom_toTopOf="@id/guideline_register_bottom"
-            app:layout_constraintEnd_toStartOf="@id/guideline_end"
-            app:layout_constraintStart_toEndOf="@id/txt_questions" />
+            app:layout_constraintBottom_toTopOf="@+id/guideline_register_bottom"
+            app:layout_constraintEnd_toStartOf="@+id/guideline_end"
+            app:layout_constraintStart_toEndOf="@+id/txt_questions" />
 
         <!-- GuideLines -->
 

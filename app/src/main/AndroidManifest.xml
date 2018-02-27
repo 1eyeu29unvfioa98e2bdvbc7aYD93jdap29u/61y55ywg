@@ -3,6 +3,7 @@
           package="palestra.kotlin">
 
     <application
+        android:name="ru.pavlov.palestra.application.Application"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -10,24 +11,27 @@
         android:supportsRtl="true"
         android:theme="@style/AppBaseTheme">
 
-        <activity android:name="ru.pavlov.palestra.presentation.modules.welcome.welcomeparent.view.activity.WelcomeActivity"
+        <activity
+            android:name="ru.pavlov.palestra.presentation.modules.welcome.welcomeparent.view.activity.WelcomeActivity"
             android:theme="@style/AppBaseTheme.WelcomeStyle">
             <!--<intent-filter>-->
-                <!--<action android:name="android.intent.action.MAIN"/>-->
-                <!--<category android:name="android.intent.category.LAUNCHER"/>-->
+            <!--<action android:name="android.intent.action.MAIN"/>-->
+            <!--<category android:name="android.intent.category.LAUNCHER"/>-->
             <!--</intent-filter>-->
         </activity>
 
-        <activity android:name="ru.pavlov.palestra.presentation.modules.authentication.view.activity.AuthActivity"
-                  android:theme="@style/AppBaseTheme.WelcomeStyle">
+        <activity
+            android:name="ru.pavlov.palestra.presentation.modules.authentication.view.activity.AuthActivity"
+            android:theme="@style/AppBaseTheme.WelcomeStyle">
             <!--<intent-filter>-->
             <!--<action android:name="android.intent.action.MAIN" />-->
             <!--<category android:name="android.intent.category.LAUNCHER" />-->
             <!--</intent-filter>-->
         </activity>
 
-        <activity android:name="ru.pavlov.palestra.presentation.modules.registration.parent.view.RegistrationActivity"
-                  android:theme="@style/AppBaseTheme.WelcomeStyle">
+        <activity
+            android:name="ru.pavlov.palestra.presentation.modules.registration.parent.view.RegistrationActivity"
+            android:theme="@style/AppBaseTheme.WelcomeStyle">
             <!--<intent-filter>-->
             <!--<action android:name="android.intent.action.MAIN" />-->
             <!--<category android:name="android.intent.category.LAUNCHER" />-->
@@ -36,15 +40,15 @@
 
         <activity android:name="ru.pavlov.palestra.presentation.modules.main.view.activity.MainActivity">
             <!--<intent-filter>-->
-                <!--<action android:name="android.intent.action.MAIN"/>-->
-                <!--<category android:name="android.intent.category.LAUNCHER"/>-->
+            <!--<action android:name="android.intent.action.MAIN"/>-->
+            <!--<category android:name="android.intent.category.LAUNCHER"/>-->
             <!--</intent-filter>-->
         </activity>
 
         <activity android:name="ru.pavlov.palestra.presentation.modules.event.create.parent.view.activity.CreateEventActivity">
             <intent-filter>
-            <action android:name="android.intent.action.MAIN"/>
-            <category android:name="android.intent.category.LAUNCHER"/>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
 

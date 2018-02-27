@@ -18,6 +18,8 @@ class AddEventFirstStepFragment : Fragment() {
     private lateinit var binding: FragmentAddEventBinding
     private lateinit var gridAdapter: CategoriesAdapter
     companion object {
+        val TAG = AddEventFirstStepFragment::class.java.simpleName
+
         fun newInstance(): AddEventFirstStepFragment {
             val args = Bundle()
 //        args.putSerializable(ARG_CAUGHT, caught)

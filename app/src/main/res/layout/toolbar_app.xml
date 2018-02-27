@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         app:navigationIcon="@drawable/ic_back_arrow"
-        android:background="@color/whiteColor100">
+        android:background="@color/colorWhite100">
 
         <TextView
             android:id="@+id/title_text"

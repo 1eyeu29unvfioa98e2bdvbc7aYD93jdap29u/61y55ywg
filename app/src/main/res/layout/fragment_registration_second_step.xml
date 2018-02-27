@@ -20,11 +20,11 @@
             android:inputType="text"
             android:paddingEnd="20dp"
             android:paddingStart="20dp"
-            android:textColor="@color/whiteColor100"
+            android:textColor="@color/colorWhite100"
             android:textColorHint="@color/authHintColor"
             app:layout_constraintBottom_toTopOf="@+id/guideline_edit_user_city_bottom"
-            app:layout_constraintEnd_toStartOf="@id/guideline_end"
-            app:layout_constraintStart_toEndOf="@id/guideline_start"
+            app:layout_constraintEnd_toStartOf="@+id/guideline_end"
+            app:layout_constraintStart_toEndOf="@+id/guideline_start"
             app:layout_constraintTop_toBottomOf="@+id/guideline_edit_user_city_top"
             app:layout_constraintVertical_bias="0.00"
             app:layout_constraintVertical_chainStyle="packed" />
@@ -33,7 +33,7 @@
             android:id="@+id/separator"
             android:layout_width="0dp"
             android:layout_height="1dp"
-            android:background="@color/whiteColor100"
+            android:background="@color/colorWhite100"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/edit_user_city" />
@@ -42,9 +42,9 @@
             android:id="@+id/city_list"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            app:layout_constraintBottom_toTopOf="@id/guideline_city_list_bottom"
-            app:layout_constraintEnd_toStartOf="@id/guideline_end"
-            app:layout_constraintStart_toEndOf="@id/guideline_start"
+            app:layout_constraintBottom_toTopOf="@+id/guideline_city_list_bottom"
+            app:layout_constraintEnd_toStartOf="@+id/guideline_end"
+            app:layout_constraintStart_toEndOf="@+id/guideline_start"
             app:layout_constraintTop_toBottomOf="@+id/separator"
             tools:listitem="@layout/item_city_list" />
 

@@ -15,7 +15,7 @@
             android:id="@+id/radio_group"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:background="@color/whiteColor100"
+            android:background="@color/colorWhite100"
             android:gravity="start"
             android:orientation="horizontal"
             android:weightSum="1"

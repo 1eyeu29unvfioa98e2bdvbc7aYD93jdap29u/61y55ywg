@@ -36,9 +36,14 @@ android {
 dependencies {
     //otherModules
     implementation project(":design")
+    implementation project(":viper")
 
     //Kotlin
     implementation jetbrains.kotlin
+
+    //arch
+    implementation arch.dagger2
+    kapt arch.dagger2Kotlin
 
     //design
     implementation design.bottomNavigation
@@ -54,6 +59,7 @@ dependencies {
     //Parceller
     implementation parceller.parceller
     annotationProcessor parceller.parcellerAnnotProc
+    kapt parceller.parcellerAnnotProc
 
     //GreenDao
 //    implementation greenRobot.greenDao
