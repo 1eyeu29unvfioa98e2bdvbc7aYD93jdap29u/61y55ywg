@@ -11,29 +11,41 @@
 
     </data>
 
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:layout_gravity="center_horizontal"
-        android:drawablePadding="10dp"
-        android:drawableStart="@drawable/shape_circle"
-        android:ellipsize="end"
         android:gravity="center_vertical"
-        android:maxLines="1"
-        android:singleLine="true"
-        android:text="@{event.title}"
-        android:textColor="@color/colorGray1"
-        android:textSize="18dp"
-        app:addevent_category_checked="@{event}"
-        app:autoSizeMaxTextSize="18sp"
-        app:autoSizeMinTextSize="14sp"
-        app:autoSizeStepGranularity="2sp"
-        app:autoSizeTextType="uniform"
-        tools:background="@color/colorAccent"
-        tools:ignore="RtlSymmetry"
-        tools:layout_marginTop="70dp"
-        tools:text="Развлечения">
+        android:orientation="horizontal"
+        tools:background="@color/color_event_olg">
 
-    </TextView>
+        <ImageView
+            android:layout_width="14dp"
+            android:layout_height="14dp"
+            android:layout_marginTop="1dp"
+            android:background="@drawable/shape_circle"
+            app:addevent_category_checked="@{event}"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="10dp"
+            android:ellipsize="end"
+            android:gravity="center_vertical"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:text="@{event.title}"
+            android:textColor="@color/colorGray1"
+            android:textSize="18sp"
+            app:autoSizeMaxTextSize="18sp"
+            app:autoSizeMinTextSize="14sp"
+            app:autoSizeStepGranularity="2sp"
+            app:autoSizeTextType="uniform"
+            tools:background="@color/colorAccent"
+            tools:ignore="RtlSymmetry"
+            tools:text="Развлечения">
+
+        </TextView>
+
+    </LinearLayout>
 
 </layout>

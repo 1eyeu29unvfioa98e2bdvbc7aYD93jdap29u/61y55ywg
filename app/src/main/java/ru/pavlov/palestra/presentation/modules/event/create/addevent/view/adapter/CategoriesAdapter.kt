@@ -2,13 +2,13 @@ package ru.pavlov.palestra.presentation.modules.event.create.addevent.view.adapt
 
 import android.content.Context
 import android.databinding.DataBindingUtil
-import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
-import palestra.kotlin.R
 import palestra.kotlin.databinding.ItemEventCategoryBinding
 import ru.pavlov.palestra.data.models.EventCategories
+import android.view.LayoutInflater
+import palestra.kotlin.R
 
 
 class CategoriesAdapter constructor(

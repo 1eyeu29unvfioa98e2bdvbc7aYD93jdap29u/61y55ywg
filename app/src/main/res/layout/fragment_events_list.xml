@@ -11,49 +11,69 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <TextView
-            android:id="@+id/btn_by_date"
-            style="@style/TopButtons"
+        <RadioGroup
+            android:id="@+id/radio_group"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:background="@color/whiteColor100"
-            android:clickable="true"
-            android:focusable="true"
-            android:foreground="?attr/selectableItemBackgroundBorderless"
-            android:paddingStart="34dp"
-            android:text="По дате"
-            android:textColor="@drawable/top_btn_selector"
-            app:autoSizeMaxTextSize="20sp"
-            app:autoSizeMinTextSize="16sp"
-            app:autoSizeStepGranularity="2sp"
-            app:autoSizeTextType="uniform"
-            app:layout_constraintBottom_toTopOf="@+id/guideline_top"
-            app:layout_constraintEnd_toStartOf="@+id/btn_by_favorite"
-            app:layout_constraintHorizontal_weight="0.4"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:ignore="RtlSymmetry"/>
-
-        <TextView
-            android:id="@+id/btn_by_favorite"
-            style="@style/TopButtons"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:background="@color/whiteColor100"
-            android:clickable="true"
-            android:focusable="true"
-            android:foreground="?attr/selectableItemBackgroundBorderless"
-            android:text="Популярное"
-            android:textColor="@drawable/top_btn_selector"
-            app:autoSizeMaxTextSize="20sp"
-            app:autoSizeMinTextSize="16sp"
-            app:autoSizeStepGranularity="2sp"
-            app:autoSizeTextType="uniform"
+            android:gravity="start"
+            android:orientation="horizontal"
+            android:weightSum="1"
             app:layout_constraintBottom_toTopOf="@+id/guideline_top"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_weight="0.6"
-            app:layout_constraintStart_toEndOf="@+id/btn_by_date"
-            app:layout_constraintTop_toTopOf="parent"/>
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:background="@color/colorPrimary">
+
+            <RadioButton
+                android:id="@+id/btn_by_date"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.4"
+                android:button="@null"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:text="По дате"
+                android:textAlignment="center"
+                android:background="@null"
+                android:textAllCaps="true"
+                android:checked="true"
+                android:textColor="@drawable/selector_top_btn"
+                android:textSize="20sp"
+                app:autoSizeMaxTextSize="20sp"
+                app:autoSizeMinTextSize="16sp"
+                app:autoSizeStepGranularity="2sp"
+                app:autoSizeTextType="uniform"
+                tools:textColor="@color/color_old_unchecked"/>
+
+            <RadioButton
+                android:id="@+id/btn_by_favorite"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5"
+                android:button="@null"
+                android:background="@null"
+                android:ellipsize="end"
+                android:gravity="start|center_vertical"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:text="Популярное"
+                android:textAllCaps="true"
+                android:textColor="@drawable/selector_top_btn"
+                android:textSize="20sp"
+                app:autoSizeMaxTextSize="20sp"
+                app:autoSizeMinTextSize="16sp"
+                app:autoSizeStepGranularity="2sp"
+                app:autoSizeTextType="uniform"
+                tools:textColor="@color/color_old_unchecked"/>
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.1"/>
+
+        </RadioGroup>
 
         <android.support.v7.widget.RecyclerView
             android:id="@+id/list_events"
