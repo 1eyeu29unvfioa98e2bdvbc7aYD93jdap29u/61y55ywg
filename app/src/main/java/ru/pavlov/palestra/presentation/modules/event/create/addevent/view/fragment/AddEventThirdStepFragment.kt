@@ -7,7 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import palestra.kotlin.R
-import palestra.kotlin.databinding.FragmentAddEventBinding
+import palestra.kotlin.databinding.FragmentAddEventFirstBinding
 import ru.pavlov.palestra.data.models.EventCategories
 import ru.pavlov.palestra.data.models.EventsType
 import ru.pavlov.palestra.presentation.modules.event.create.addevent.view.adapter.CategoriesAdapter
@@ -15,7 +15,7 @@ import java.util.*
 
 class AddEventThirdStepFragment : Fragment() {
 
-    private lateinit var binding: FragmentAddEventBinding
+    private lateinit var binding: FragmentAddEventFirstBinding
     private lateinit var gridAdapter: CategoriesAdapter
 
     companion object {
@@ -32,14 +32,14 @@ class AddEventThirdStepFragment : Fragment() {
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        val view: View = inflater.inflate(R.layout.fragment_add_event, container, false)
+        val view: View = inflater.inflate(R.layout.fragment_add_event_first, container, false)
         binding = DataBindingUtil.bind(view)
 
         val list = generatedEvents()
 
         gridAdapter = CategoriesAdapter(context!!, R.layout.item_event_category, list)
 
-        binding.eventCategories.adapter = gridAdapter
+//        binding.eventCategories.adapter = gridAdapter
 
         return view
     }

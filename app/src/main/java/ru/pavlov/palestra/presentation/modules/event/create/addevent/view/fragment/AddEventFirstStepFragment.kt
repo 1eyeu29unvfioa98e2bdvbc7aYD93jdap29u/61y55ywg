@@ -1,22 +1,28 @@
 package ru.pavlov.palestra.presentation.modules.event.create.addevent.view.fragment
 
+import android.annotation.SuppressLint
 import android.databinding.DataBindingUtil
 import android.os.Bundle
 import android.support.v4.app.Fragment
+import android.support.v4.app.SharedElementCallback
+import android.support.v4.view.ViewCompat
+import android.transition.TransitionInflater
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import palestra.kotlin.R
-import palestra.kotlin.databinding.FragmentAddEventBinding
+import palestra.kotlin.databinding.FragmentAddEventFirstBinding
 import ru.pavlov.palestra.data.models.EventCategories
 import ru.pavlov.palestra.data.models.EventsType
 import ru.pavlov.palestra.presentation.modules.event.create.addevent.view.adapter.CategoriesAdapter
 import java.util.*
 
+
 class AddEventFirstStepFragment : Fragment() {
 
-    private lateinit var binding: FragmentAddEventBinding
+    private lateinit var binding: FragmentAddEventFirstBinding
     private lateinit var gridAdapter: CategoriesAdapter
+
     companion object {
         val TAG = AddEventFirstStepFragment::class.java.simpleName
 
@@ -31,7 +37,7 @@ class AddEventFirstStepFragment : Fragment() {
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        val view: View = inflater.inflate(R.layout.fragment_add_event, container, false)
+        val view: View = inflater.inflate(R.layout.fragment_add_event_first, container, false)
         binding = DataBindingUtil.bind(view)
 
         val list = generatedEvents()
@@ -39,6 +45,23 @@ class AddEventFirstStepFragment : Fragment() {
         gridAdapter = CategoriesAdapter(context!!, R.layout.item_event_category, list)
 
         binding.eventCategories.adapter = gridAdapter
+
+        binding.txtHelp.setOnClickListener({
+            nextFragment()
+        })
+
+        sharedElementEnterTransition =
+                TransitionInflater.from(context).inflateTransition(R.transition.txt_shared_element_transition)
+
+        setExitSharedElementCallback(
+                object : SharedElementCallback() {
+                    override fun onMapSharedElements(
+                            names: List<String>, sharedElements: MutableMap<String, View>) {
+                        // Маппим имя первого общего элемента к дочерней ImageView.
+                        sharedElements[names[0]] = binding.txtHelp
+                    }
+                })
+
 
         return view
     }
@@ -56,5 +79,25 @@ class AddEventFirstStepFragment : Fragment() {
                 },
                 rand.nextBoolean()
         )
+    }
+
+
+    @SuppressLint("NewApi")
+    fun nextFragment() {
+        activity?.supportFragmentManager.apply {
+            this!!.beginTransaction()
+                    .setReorderingAllowed(true) // setAllowOptimization before 26.1.0
+                    .addSharedElement(binding.txtHelp, binding.txtHelp.transitionName)
+//                    .addSharedElement(binding.txtHelp, binding.txtHelp.transitionName)
+//                    .addSharedElement(binding.txtHelp, binding.txtHelp.transitionName)
+//                    .addSharedElement(binding.txtHelp, binding.txtHelp.transitionName)
+//                    .addSharedElement(binding.txtHelp, binding.txtHelp.transitionName)
+                    .replace(R.id.fragment_container,
+                            AddEventSecondStepFragment.newInstance(),
+                            AddEventSecondStepFragment::class.java.simpleName)
+                    .addToBackStack(null)
+                    .commit()
+
+        }
     }
 }

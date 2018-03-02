@@ -2,12 +2,14 @@ package ru.pavlov.palestra.presentation.modules.event.create.addevent.view.fragm
 
 import android.databinding.DataBindingUtil
 import android.os.Bundle
+import android.transition.TransitionInflater
 import android.support.v4.app.Fragment
+import android.support.v4.app.SharedElementCallback
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import palestra.kotlin.R
-import palestra.kotlin.databinding.FragmentAddEventBinding
+import palestra.kotlin.databinding.FragmentAddEventSecondBinding
 import ru.pavlov.palestra.data.models.EventCategories
 import ru.pavlov.palestra.data.models.EventsType
 import ru.pavlov.palestra.presentation.modules.event.create.addevent.view.adapter.CategoriesAdapter
@@ -15,7 +17,7 @@ import java.util.*
 
 class AddEventSecondStepFragment : Fragment() {
 
-    private lateinit var binding: FragmentAddEventBinding
+    private lateinit var binding: FragmentAddEventSecondBinding
     private lateinit var gridAdapter: CategoriesAdapter
     companion object {
         val TAG = AddEventSecondStepFragment::class.java.simpleName
@@ -31,8 +33,25 @@ class AddEventSecondStepFragment : Fragment() {
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        val view: View = inflater.inflate(R.layout.fragment_registration_four_step, container, false)
-//        binding = DataBindingUtil.bind(view)
+        val view: View = inflater.inflate(R.layout.fragment_add_event_second, container, false)
+        binding = DataBindingUtil.bind(view)
+
+
+
+        val transition = TransitionInflater.from(context)
+                .inflateTransition(R.transition.txt_shared_element_transition)
+        sharedElementEnterTransition = transition
+
+        setEnterSharedElementCallback(
+                object : SharedElementCallback() {
+                    override fun onMapSharedElements(
+                            names: List<String>, sharedElements: MutableMap<String, View>) {
+                        // Маппим имя первого общего элемента к дочерней ImageView.
+                        sharedElements[names[0]] = binding.txtHelp
+                    }
+                })
+
+
 
         val list = generatedEvents()
 
