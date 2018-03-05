@@ -52,7 +52,7 @@ class AddEventSecondStepFragment : Fragment() {
                 })
 
 
-
+//
         val list = generatedEvents()
 
 //        gridAdapter = CategoriesAdapter(context!!, R.layout.item_event_category, list)

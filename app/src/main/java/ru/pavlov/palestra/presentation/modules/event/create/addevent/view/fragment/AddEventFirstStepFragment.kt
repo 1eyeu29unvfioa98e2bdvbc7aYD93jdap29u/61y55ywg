@@ -81,7 +81,6 @@ class AddEventFirstStepFragment : Fragment() {
         )
     }
 
-
     @SuppressLint("NewApi")
     fun nextFragment() {
         activity?.supportFragmentManager.apply {
