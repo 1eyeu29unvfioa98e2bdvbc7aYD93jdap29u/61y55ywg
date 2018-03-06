@@ -5,6 +5,10 @@
     <item name="common_margin_end" type="dimen" format="float">0.93</item>
     <item name="common_margin_top" type="dimen" format="float">0.08</item>
     <item name="common_margin_logo_bottom" type="dimen" format="float">0.22</item>
+    <dimen name="common_item_loading_height">60dp</dimen>
+
+    <!-- WelcomeActivity -->
+    <dimen name="ramotion_slider_padding">30dp</dimen>
 
     <!-- Item person list -->
     <dimen name="person_photo_size">44dp</dimen>

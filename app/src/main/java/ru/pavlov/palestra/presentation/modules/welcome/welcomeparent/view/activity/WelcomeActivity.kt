@@ -2,6 +2,7 @@ package ru.pavlov.palestra.presentation.modules.welcome.welcomeparent.view.activ
 
 import android.databinding.DataBindingUtil
 import android.os.Bundle
+import android.support.v4.content.ContextCompat
 import android.support.v7.app.AppCompatActivity
 import palestra.kotlin.R
 import palestra.kotlin.databinding.ActivityWelcomeBinding
@@ -11,15 +12,16 @@ import java.util.*
 
 class WelcomeActivity : AppCompatActivity() {
 
-    //fixme -- Kotlin ?
     private lateinit var binding: ActivityWelcomeBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_welcome)
 
-        binding.viewPager.adapter =
-                WelcomeViewHolderAdapter(this@WelcomeActivity, generate())
+        binding.viewPager.apply {
+            slider.adapter = WelcomeViewHolderAdapter(this@WelcomeActivity, generate())
+            binding.sliderIndicator.setupWithViewPager(slider)
+        }
     }
 
     fun generate(): List<WelcomeCard> {

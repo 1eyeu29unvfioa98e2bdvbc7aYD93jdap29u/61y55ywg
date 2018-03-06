@@ -13,7 +13,7 @@
     </style>
 
     <style name="TextView.Base" parent="android:Widget.TextView">
-        <item name="android:fontFamily">@font/open_sans_regular</item>
+        <item name="android:fontFamily">@font/open_sans_light</item>
     </style>
 
     <!-- Event list top buttons -->

@@ -31,8 +31,8 @@ class PersonFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        personAdapter = Adapter()
-        personAdapter.setItems(generatePersons())
+//        personPersonAdapterDelegate = PersonAdapterDelegate()
+//        personPersonAdapterDelegate.setItems(generatePersons())
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
@@ -43,7 +43,8 @@ class PersonFragment : Fragment() {
         linearLayoutManager.orientation = LinearLayoutManager.VERTICAL
         binding.listItems.layoutManager = linearLayoutManager
         binding.listItems.setHasFixedSize(true)
-        binding.listItems.adapter = personAdapter
+
+//        binding.listItems.adapter = personPersonAdapterDelegate
 
         return view
     }
