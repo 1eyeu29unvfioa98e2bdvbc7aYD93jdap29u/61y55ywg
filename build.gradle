@@ -40,12 +40,16 @@ ext.versions = [
         dagger2               : "2.12",
         dagger2Kotlin         : "2.12",
 
+        //adapters
+        adapterDelegate       : "3.0.1",
+
         //design
         constraintLayout      : "1.0.2",
         customBottomNavigation: "2.0.4",
 
         //common
         androidSupport        : "27.0.2",
+        dataBindingKotlin     : "3.0.0-alpha3",
         //greenDao              : "3.2.2",
         gson                  : "2.8.2",
         parceller             : "1.1.9",
@@ -74,16 +78,22 @@ ext.design = [
 ]
 
 ext.arch = [
-        dagger2      : "com.google.dagger:dagger:$versions.dagger2",
-        dagger2Kotlin: "com.google.dagger:dagger-compiler:$versions.dagger2Kotlin"
+        dagger2         : "com.google.dagger:dagger:$versions.dagger2",
+        dagger2Kotlin   : "com.google.dagger:dagger-compiler:$versions.dagger2Kotlin"
+]
+
+ext.adapters = [
+        adapterDelegate : "com.hannesdorfmann:adapterdelegates3:$versions.adapterDelegate"
 ]
 
 ext.support = [
         appcompat7      : "com.android.support:appcompat-v7:$versions.androidSupport",
         support4        : "com.android.support:support-v4:$versions.androidSupport",
         design          : "com.android.support:design:$versions.androidSupport",
+        cardview       : "com.android.support:cardview-v7:$versions.androidSupport",
         recyclerview    : "com.android.support:recyclerview-v7:$versions.androidSupport",
-        constraintLayout: "com.android.support.constraint:constraint-layout:$versions.constraintLayout"
+        constraintLayout: "com.android.support.constraint:constraint-layout:$versions.constraintLayout",
+        dataBinding     : "com.android.databinding:compiler:$versions.dataBindingKotlin"
 ]
 
 ext.parceller = [

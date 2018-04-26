@@ -6,7 +6,7 @@ import android.support.v4.app.Fragment
 import android.support.v7.app.AppCompatActivity
 import palestra.kotlin.R
 import palestra.kotlin.databinding.ActivityRegistrationBinding
-import ru.pavlov.palestra.presentation.modules.registration.firststep.view.FourStepFragment
+import ru.pavlov.palestra.presentation.modules.registration.step1.view.FirstStepFragment
 
 class RegistrationActivity : AppCompatActivity() {
 
@@ -24,7 +24,7 @@ class RegistrationActivity : AppCompatActivity() {
 
         if (fragment == null) {
             fragmentManager.beginTransaction()
-                    .replace(R.id.fragment_container, FourStepFragment().newInstance(), FIRST_STEP)
+                    .replace(R.id.fragment_container, FirstStepFragment().newInstance(), FIRST_STEP)
                     .commit()
         }
     }

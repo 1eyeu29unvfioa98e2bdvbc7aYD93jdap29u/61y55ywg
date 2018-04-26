@@ -7,8 +7,8 @@ import android.support.v4.content.ContextCompat
 import android.view.View
 import android.widget.TextView
 import palestra.kotlin.R
-import ru.pavlov.palestra.data.models.Event
-import ru.pavlov.palestra.data.models.EventsType
+import ru.pavlov.palestra.data.models.presentation.Event
+import ru.pavlov.palestra.data.models.presentation.EventsType
 
 const val STROKE_SIZE = 6
 

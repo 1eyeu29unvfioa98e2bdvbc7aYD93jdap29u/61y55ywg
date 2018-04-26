@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="event"
+            type="ru.pavlov.palestra.data.models.presentation.Event"/>
+
+    </data>
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="40dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="40dp"
+        app:cardBackgroundColor="@android:color/holo_orange_light"
+        app:cardCornerRadius="10dp"
+        app:elevation="4dp">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            tools:background="@color/color_text_btn_next">
+
+            <TextView
+                android:id="@+id/txt_event_title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:fontFamily="@font/open_sans_light"
+                android:maxLines="1"
+                android:textColor="@color/frag_efi_color_event_title"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toStartOf="@+id/btn_menu"
+                app:layout_constraintStart_toStartOf="@+id/guideline_percent_begin"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Баскетбольный вечерок" />
+
+            <ImageView
+                android:id="@+id/btn_menu"
+                android:layout_width="6dp"
+                android:layout_height="0dp"
+                android:src="@drawable/ic_menu_btn"
+                app:layout_constraintBottom_toBottomOf="@+id/txt_event_title"
+                app:layout_constraintEnd_toEndOf="@+id/guideline_percent_end"
+                app:layout_constraintTop_toTopOf="@+id/txt_event_title"
+                tools:ignore="ContentDescription" />
+
+            <TextView
+                android:id="@+id/txt_event_category"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/event_horizontal_divider_height"
+                android:text="@{event.eventType.eventsTypeText}"
+                android:textAllCaps="true"
+                android:textColor="@color/color_event_category"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@+id/guideline_percent_begin"
+                app:layout_constraintTop_toBottomOf="@+id/txt_event_title"
+                tools:text="Развлечение"/>
+
+            <TextView
+                android:id="@+id/txt_event_old"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:text="@{event.eventOld}"
+                android:textColor="@color/color_event_olg"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintBaseline_toBaselineOf="@+id/txt_event_category"
+                app:layout_constraintStart_toEndOf="@+id/txt_event_category"
+                tools:text="18+"/>
+
+            <!-- Guidelines -->
+
+            <android.support.constraint.Guideline
+                android:id="@+id/guideline_percent_begin"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.04"/>
+
+            <android.support.constraint.Guideline
+                android:id="@+id/guideline_percent_end"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.96"/>
+
+        </android.support.constraint.ConstraintLayout>
+
+    </android.support.v7.widget.CardView>
+
+</layout>

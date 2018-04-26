@@ -9,7 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import palestra.kotlin.R
 import palestra.kotlin.databinding.FragmentPersonListBinding
-import ru.pavlov.palestra.data.models.Person
+import ru.pavlov.palestra.data.models.presentation.Person
 import ru.pavlov.palestra.presentation.modules.persons.personlist.view.adapter.Adapter
 
 class PersonFragment : Fragment() {

@@ -45,16 +45,19 @@ dependencies {
     implementation arch.dagger2
     kapt arch.dagger2Kotlin
 
+    //adapters
+    implementation adapters.adapterDelegate
+
     //design
     implementation design.bottomNavigation
 
     //Support
+    kapt support.dataBinding
     implementation support.appcompat7
     implementation support.design
-    implementation support.constraintLayout
+    implementation support.cardview
     implementation support.recyclerview
-
-    kapt "com.android.databinding:compiler:3.0.0-alpha3"
+    implementation support.constraintLayout
 
     //Parceller
     implementation parceller.parceller

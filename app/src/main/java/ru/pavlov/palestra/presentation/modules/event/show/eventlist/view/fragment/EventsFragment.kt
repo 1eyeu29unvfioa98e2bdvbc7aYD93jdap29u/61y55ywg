@@ -9,8 +9,8 @@ import android.view.View
 import android.view.ViewGroup
 import palestra.kotlin.R
 import palestra.kotlin.databinding.FragmentEventsListBinding
-import ru.pavlov.palestra.data.models.Event
-import ru.pavlov.palestra.data.models.EventsType
+import ru.pavlov.palestra.data.models.presentation.Event
+import ru.pavlov.palestra.data.models.presentation.EventsType
 import ru.pavlov.palestra.presentation.modules.event.show.eventlist.view.adapter.EventsAdapter
 import java.util.*
 

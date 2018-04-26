@@ -10,7 +10,7 @@ import android.view.View
 import android.view.ViewGroup
 import palestra.kotlin.R
 import palestra.kotlin.databinding.FragmentWelcomeBinding
-import ru.pavlov.palestra.data.models.WelcomeCard
+import ru.pavlov.palestra.data.models.presentation.WelcomeCard
 
 class WelcomeViewHolderAdapter(
         val context: Context,

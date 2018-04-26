@@ -2,11 +2,10 @@ package ru.pavlov.palestra.presentation.modules.welcome.welcomeparent.view.activ
 
 import android.databinding.DataBindingUtil
 import android.os.Bundle
-import android.support.v4.content.ContextCompat
 import android.support.v7.app.AppCompatActivity
 import palestra.kotlin.R
 import palestra.kotlin.databinding.ActivityWelcomeBinding
-import ru.pavlov.palestra.data.models.WelcomeCard
+import ru.pavlov.palestra.data.models.presentation.WelcomeCard
 import ru.pavlov.palestra.presentation.modules.welcome.welcomeparent.view.adapter.WelcomeViewHolderAdapter
 import java.util.*
 

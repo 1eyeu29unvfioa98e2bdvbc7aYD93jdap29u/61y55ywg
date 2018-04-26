@@ -6,7 +6,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import palestra.kotlin.R
 import palestra.kotlin.databinding.ItemPersonListBinding
-import ru.pavlov.palestra.data.models.Person
+import ru.pavlov.palestra.data.models.presentation.Person
 
 class Adapter : RecyclerView.Adapter<Adapter.ViewHolder>() {
     var persons: MutableList<Person> = java.util.ArrayList()

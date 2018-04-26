@@ -8,10 +8,9 @@ import android.util.DisplayMetrics
 import android.util.TypedValue
 import android.widget.ImageView
 import android.widget.LinearLayout
-import android.widget.TextView
 import palestra.kotlin.R
-import ru.pavlov.palestra.data.models.EventCategories
-import ru.pavlov.palestra.data.models.EventsType
+import ru.pavlov.palestra.data.models.presentation.EventCategories
+import ru.pavlov.palestra.data.models.presentation.EventsType
 
 const val STROKE_SIZE = 4
 

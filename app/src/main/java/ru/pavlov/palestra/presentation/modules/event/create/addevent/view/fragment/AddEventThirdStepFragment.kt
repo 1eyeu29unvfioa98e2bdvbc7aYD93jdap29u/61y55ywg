@@ -8,8 +8,8 @@ import android.view.View
 import android.view.ViewGroup
 import palestra.kotlin.R
 import palestra.kotlin.databinding.FragmentAddEventBinding
-import ru.pavlov.palestra.data.models.EventCategories
-import ru.pavlov.palestra.data.models.EventsType
+import ru.pavlov.palestra.data.models.presentation.EventCategories
+import ru.pavlov.palestra.data.models.presentation.EventsType
 import ru.pavlov.palestra.presentation.modules.event.create.addevent.view.adapter.CategoriesAdapter
 import java.util.*
 

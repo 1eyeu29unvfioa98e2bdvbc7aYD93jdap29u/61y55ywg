@@ -18,7 +18,7 @@
     <color name="colorGray4">#F2F2F2</color>
 
     <!-- Welcome Card -->
-    <color name="welcomeCardTitleColor">#333333</color>
+    <color name="welcomeCardTitleColor">@color/colorGray1</color>
     <color name="welcomeCardDescriptionColor">#BDBDBD</color>
 
     <color name="welcomeCardSliderDotActive">#FFFFFF</color>
@@ -30,7 +30,7 @@
     <color name="authBackgroundShapeEdit">#33FFFFFF</color>
 
     <!-- Top buttons color -->
-    <color name="color_top_btn_active">#333333</color>
+    <color name="color_top_btn_active">@color/colorGray1</color>
     <color name="color_top_btn_inactive">#E0E0E0</color>
 
     <!-- Bottom navigation panel -->
@@ -56,5 +56,8 @@
     <color name="color_txt_title">@color/colorGray1</color>
     <color name="color_old_checked">#2ED573</color>
     <color name="color_old_unchecked">#E0E0E0</color>
+
+    <!-- Fragment event full info -->
+    <color name="frag_efi_color_event_title">@color/colorGray1</color>
 
 </resources>

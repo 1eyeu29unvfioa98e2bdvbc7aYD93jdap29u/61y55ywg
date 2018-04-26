@@ -6,7 +6,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import palestra.kotlin.R
 import palestra.kotlin.databinding.ItemEventCardBinding
-import ru.pavlov.palestra.data.models.Event
+import ru.pavlov.palestra.data.models.presentation.Event
 import java.util.*
 
 class EventsAdapter : RecyclerView.Adapter<EventsAdapter.ViewHolder>() {
