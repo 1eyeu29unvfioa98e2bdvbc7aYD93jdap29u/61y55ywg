@@ -47,9 +47,10 @@ ext.versions = [
         //design
         constraintLayout      : "1.1.0",
         customBottomNavigation: "2.0.4",
+        glideVersion          : "4.7.1",
 
         //common
-        androidSupport        : "27.0.2",
+        androidSupport        : "27.1.1",
 //        dataBindingKotlin     : "3.0.0-alpha3",
         //greenDao              : "3.2.2",
         gson                  : "2.8.2",
@@ -71,7 +72,11 @@ ext.versions = [
 ]
 
 ext.jetbrains = [
-        kotlin: "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlinVersion"
+        kotlin          : "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlinVersion"
+]
+
+ext.glide = [
+        glideLibrary    : "com.github.bumptech.glide:glide:$versions.glideVersion"
 ]
 
 ext.design = [

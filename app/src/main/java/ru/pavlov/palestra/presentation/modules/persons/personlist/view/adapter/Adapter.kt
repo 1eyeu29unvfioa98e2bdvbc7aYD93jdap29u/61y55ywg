@@ -9,7 +9,7 @@ import palestra.kotlin.databinding.ItemPersonListBinding
 import ru.pavlov.palestra.data.models.presentation.Person
 
 class Adapter : RecyclerView.Adapter<Adapter.ViewHolder>() {
-    var persons: MutableList<Person> = java.util.ArrayList()
+    private var persons: MutableList<Person> = java.util.ArrayList()
 
     public fun setItems(persons: ArrayList<Person>) {
         this.persons.clear()
@@ -18,11 +18,11 @@ class Adapter : RecyclerView.Adapter<Adapter.ViewHolder>() {
         notifyDataSetChanged()
     }
 
-    override fun onBindViewHolder(holder: ViewHolder?, position: Int) = holder!!.bind(persons[position])
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) = holder.bind(persons[position])
 
-    override fun onCreateViewHolder(parent: ViewGroup?, viewType: Int): ViewHolder? {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val binding = DataBindingUtil.inflate<ItemPersonListBinding>(
-                LayoutInflater.from(parent!!.context), R.layout.item_person_list, parent, false)
+                LayoutInflater.from(parent.context), R.layout.item_person_list, parent, false)
 
         return ViewHolder(binding)
     }

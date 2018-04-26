@@ -19,14 +19,14 @@ class EventsAdapter : RecyclerView.Adapter<EventsAdapter.ViewHolder>() {
         notifyDataSetChanged()
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup?, viewType: Int): ViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val binding = DataBindingUtil.inflate<ItemEventCardBinding>(
-                LayoutInflater.from(parent!!.context), R.layout.item_event_card, parent, false)
+                LayoutInflater.from(parent.context), R.layout.item_event_card, parent, false)
 
         return ViewHolder(binding)
     }
 
-    override fun onBindViewHolder(holder: ViewHolder?, position: Int) = holder!!.bind(events[position])
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) = holder.bind(events[position])
 
     override fun getItemCount() = events.size
 
