@@ -25,10 +25,9 @@ class ThirdStepFragment : Fragment() {
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        val itemView: View = inflater.inflate(R.layout.fragment_registration_third_step, container, false)
+        val binding = DataBindingUtil.inflate<FragmentRegistrationThirdStepBinding>(
+                inflater, R.layout.fragment_registration_third_step, container, false)
 
-        val binding: FragmentRegistrationThirdStepBinding = DataBindingUtil.bind(itemView)
-
-        return itemView
+        return binding.root
     }
 }

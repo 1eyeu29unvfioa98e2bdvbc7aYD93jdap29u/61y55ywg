@@ -39,8 +39,7 @@ class EventsFragment : Fragment() {
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        val view: View = inflater.inflate(R.layout.fragment_events_list, container, false)
-        binding = DataBindingUtil.bind(view)
+        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_events_list, container, false)
 
 //        setActivityToolbar()
 
@@ -53,7 +52,7 @@ class EventsFragment : Fragment() {
         binding.listEvents.adapter = eventsAdapter
 
 
-        return view
+        return binding.root
     }
 //
 //    private fun setActivityToolbar() = (activity as AppCompatActivity).setSupportActionBar(binding.toolbar)

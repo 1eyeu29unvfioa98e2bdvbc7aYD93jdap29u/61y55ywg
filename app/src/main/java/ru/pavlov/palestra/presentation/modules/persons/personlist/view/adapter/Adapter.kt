@@ -21,8 +21,8 @@ class Adapter : RecyclerView.Adapter<Adapter.ViewHolder>() {
     override fun onBindViewHolder(holder: ViewHolder?, position: Int) = holder!!.bind(persons[position])
 
     override fun onCreateViewHolder(parent: ViewGroup?, viewType: Int): ViewHolder? {
-        val binding: ItemPersonListBinding = DataBindingUtil.bind(LayoutInflater.from(parent!!.context)
-                .inflate(R.layout.item_person_list, parent, false))
+        val binding = DataBindingUtil.inflate<ItemPersonListBinding>(
+                LayoutInflater.from(parent!!.context), R.layout.item_person_list, parent, false)
 
         return ViewHolder(binding)
     }

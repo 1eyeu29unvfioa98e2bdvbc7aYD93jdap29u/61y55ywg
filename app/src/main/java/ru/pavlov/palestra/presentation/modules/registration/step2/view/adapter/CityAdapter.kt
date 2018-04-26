@@ -40,7 +40,7 @@ class CityAdapter(val context: Context?) : RecyclerView.Adapter<CityAdapter.View
                 .inflate(R.layout.item_city_list, parent, false))
     }
 
-    class ViewHolder(itemView: View?) : RecyclerView.ViewHolder(itemView) {
-        val binding: ItemCityListBinding = DataBindingUtil.bind(itemView)
+    class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        val binding: ItemCityListBinding = DataBindingUtil.bind(itemView)!!
     }
 }

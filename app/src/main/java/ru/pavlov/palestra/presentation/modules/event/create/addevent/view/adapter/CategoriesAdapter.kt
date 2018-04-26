@@ -20,12 +20,12 @@ class CategoriesAdapter constructor(
     override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
         if (convertView == null) {
             val inflater = context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
-            val rootView = inflater.inflate(R.layout.item_event_category, parent, false)
-            val binding: ItemEventCategoryBinding = DataBindingUtil.bind(rootView)
+            val binding = DataBindingUtil.inflate<ItemEventCategoryBinding>(
+                    inflater, R.layout.item_event_category, parent, false)
 
             binding.event = eventsCategory[position]
 
-            return rootView
+            return binding.root
         }
         return (convertView)
     }

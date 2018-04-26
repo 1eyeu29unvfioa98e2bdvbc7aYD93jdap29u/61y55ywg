@@ -25,10 +25,9 @@ class FourStepFragment : Fragment() {
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        val itemView: View = inflater.inflate(R.layout.fragment_registration_four_step, container, false)
+        val binding = DataBindingUtil.inflate<FragmentRegistrationFourStepBinding>(
+                inflater, R.layout.fragment_registration_four_step, container, false)
 
-        val binding: FragmentRegistrationFourStepBinding = DataBindingUtil.bind(itemView)
-
-        return itemView
+        return binding.root
     }
 }

@@ -36,8 +36,7 @@ class PersonFragment : Fragment() {
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        val view: View = inflater.inflate(R.layout.fragment_person_list, container, false)
-        binding = DataBindingUtil.bind(view)
+        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_person_list, container, false)
 
         val linearLayoutManager = LinearLayoutManager(activity)
         linearLayoutManager.orientation = LinearLayoutManager.VERTICAL

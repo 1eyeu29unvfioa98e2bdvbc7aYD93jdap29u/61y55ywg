@@ -9,9 +9,6 @@ android {
         targetSdkVersion buildVersions.TARGET_SDK_VERIONS
         versionCode buildVersions.VERSION_CODE
         versionName buildVersions.VERSION_NAME
-
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
-
     }
 
     buildTypes {
@@ -31,7 +28,16 @@ android {
     }
 }
 
+repositories {
+    mavenCentral()
+}
+
 dependencies {
+
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation support.appcompat7
+
     //rxJava2
     implementation rx.rxJava2
     implementation rx.rxAndroid
@@ -45,13 +51,6 @@ dependencies {
     //timber
     implementation jakewharton.timber
 
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation 'com.android.support:appcompat-v7:26.1.0'
-    testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'com.android.support.test:runner:1.0.1'
-    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
-    compile "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-}
-repositories {
-    mavenCentral()
+    //Kotlin
+    implementation jetbrains.kotlin
 }

@@ -25,10 +25,9 @@ class FirstStepFragment : Fragment() {
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        val itemView: View = inflater.inflate(R.layout.fragment_registration_first_step, container, false)
+        val binding: FragmentRegistrationFirstStepBinding = DataBindingUtil.inflate(
+                inflater, R.layout.fragment_registration_first_step, container, false)
 
-        val binding: FragmentRegistrationFirstStepBinding = DataBindingUtil.bind(itemView)
-
-        return itemView
+        return binding.root
     }
 }

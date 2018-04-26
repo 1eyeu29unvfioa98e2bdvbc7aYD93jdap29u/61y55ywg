@@ -32,8 +32,7 @@ class AddEventThirdStepFragment : Fragment() {
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        val view: View = inflater.inflate(R.layout.fragment_add_event, container, false)
-        binding = DataBindingUtil.bind(view)
+        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_add_event, container, false)
 
         val list = generatedEvents()
 
@@ -41,7 +40,7 @@ class AddEventThirdStepFragment : Fragment() {
 
         binding.eventCategories.adapter = gridAdapter
 
-        return view
+        return binding.root
     }
 
     private fun generatedEvents() = (1..10).map { generateEvent() }

@@ -27,9 +27,8 @@ class SecondStepFragment : Fragment() {
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        val itemView: View = inflater.inflate(R.layout.fragment_registration_second_step, container, false)
-
-        val binding: FragmentRegistrationSecondStepBinding = DataBindingUtil.bind(itemView)
+        val binding = DataBindingUtil.inflate<FragmentRegistrationSecondStepBinding>(
+                inflater, R.layout.fragment_registration_second_step, container, false)
 
         binding.cityList.layoutManager = LinearLayoutManager(context)
 
@@ -37,7 +36,7 @@ class SecondStepFragment : Fragment() {
         cityAdapter.setCities(generate())
         binding.cityList.adapter = cityAdapter
 
-        return itemView
+        return binding.root
     }
 
     private fun generate(): ArrayList<String> {

@@ -20,8 +20,8 @@ class EventsAdapter : RecyclerView.Adapter<EventsAdapter.ViewHolder>() {
     }
 
     override fun onCreateViewHolder(parent: ViewGroup?, viewType: Int): ViewHolder {
-        val binding: ItemEventCardBinding = DataBindingUtil.bind(LayoutInflater.from(parent!!.context)
-                .inflate(R.layout.item_event_card, parent, false))
+        val binding = DataBindingUtil.inflate<ItemEventCardBinding>(
+                LayoutInflater.from(parent!!.context), R.layout.item_event_card, parent, false)
 
         return ViewHolder(binding)
     }

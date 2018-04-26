@@ -13,8 +13,8 @@ import palestra.kotlin.databinding.FragmentWelcomeBinding
 import ru.pavlov.palestra.data.models.presentation.WelcomeCard
 
 class WelcomeViewHolderAdapter(
-        val context: Context,
-        val welcomeCards: List<WelcomeCard>) : PagerAdapter() {
+        private val context: Context,
+        private val welcomeCards: List<WelcomeCard>) : PagerAdapter() {
 
     override fun isViewFromObject(view: View, obj: Any): Boolean {
         return view == obj as ConstraintLayout
@@ -28,17 +28,16 @@ class WelcomeViewHolderAdapter(
         val inflater: LayoutInflater =
                 context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
 
-        val itemView: View = inflater.inflate(R.layout.fragment_welcome, container, false)
-
-        val binding: FragmentWelcomeBinding = DataBindingUtil.bind(itemView)
+        val binding = DataBindingUtil.inflate<FragmentWelcomeBinding>(
+                inflater, R.layout.fragment_welcome, container, false)
 
         binding.txtTitleCard.text = welcomeCards[position].title
         binding.txtDescription.text = welcomeCards[position].description
         binding.imgWelcomeCard.setImageResource(welcomeCards[position].drawable)
 
-        (container as ViewPager).addView(itemView)
+        (container as ViewPager).addView(binding.root)
 
-        return itemView
+        return binding.root
     }
 
     override fun destroyItem(container: ViewGroup, position: Int, obj: Any) {
