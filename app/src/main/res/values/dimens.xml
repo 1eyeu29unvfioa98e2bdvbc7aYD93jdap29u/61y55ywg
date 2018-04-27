@@ -12,6 +12,7 @@
 
     <!-- Item person list -->
     <dimen name="person_photo_size">44dp</dimen>
+    <dimen name="person_photo_corner_radius">10dp</dimen>
 
     <!-- Item event list -->
     <dimen name="event_horizontal_divider_height">16dp</dimen>

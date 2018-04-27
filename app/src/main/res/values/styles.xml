@@ -1,15 +1,17 @@
 <resources>
 
-    <style name="AppBaseTheme.WelcomeStyle">
-        <item name="android:windowTranslucentStatus">true</item>
-    </style>
-
     <style name="AppBaseTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="colorPrimary">@color/colorWhite100</item>
         <item name="colorPrimaryDark">@color/colorWhite100</item>
         <item name="colorAccent">@color/colorAccent</item>
 
         <item name="android:textViewStyle">@style/TextView.Base</item>
+
+        <item name="cardViewStyle">@style/CardView</item>
+    </style>
+
+    <style name="AppBaseTheme.WelcomeStyle">
+        <item name="android:windowTranslucentStatus">true</item>
     </style>
 
     <style name="TextView.Base" parent="android:Widget.TextView">

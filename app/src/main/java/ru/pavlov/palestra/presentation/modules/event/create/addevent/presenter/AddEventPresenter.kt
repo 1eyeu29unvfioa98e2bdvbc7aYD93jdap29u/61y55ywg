@@ -1,12 +1,13 @@
 package ru.pavlov.palestra.presentation.modules.event.create.addevent.presenter
 
-import palestra.viper.presenter.AbstractPresenter
-import palestra.viper.view.AndroidComponent
+import com.vershininds.mixture.presenter.AbstractPresenter
+import com.vershininds.mixture.view.AndroidComponent
 import ru.pavlov.palestra.presentation.modules.event.create.addevent.contract.AddEventInteractorContract
 import ru.pavlov.palestra.presentation.modules.event.create.addevent.contract.AddEventVmContract
+import ru.pavlov.palestra.presentation.modules.event.create.addevent.viewmodel.AddEventViewModel
 import javax.inject.Inject
 
-class AddEventPresenter() : AbstractPresenter<AddEventVmContract.ViewModel>(),
+class AddEventPresenter() : AbstractPresenter<AddEventVmContract.ViewModel>(AddEventViewModel()),
         AddEventVmContract.Presenter {
 
     private lateinit var interactor: AddEventInteractorContract.Interactor
@@ -15,8 +16,8 @@ class AddEventPresenter() : AbstractPresenter<AddEventVmContract.ViewModel>(),
         this.interactor = interactor
     }
 
-    override fun attachView(viewModel: AddEventVmContract.ViewModel?, component: AndroidComponent?) {
-        super.attachView(viewModel, component)
+    override fun attachView(component: AndroidComponent?) {
+        super.attachView(component)
     }
 
     override fun detachView() {

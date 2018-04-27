@@ -1,8 +1,6 @@
 package ru.pavlov.palestra.presentation.modules.event.create.addevent.contract
 
-import palestra.viper.interactor.MvpInteractor
-import palestra.viper.presenter.MvpPresenter
-import palestra.viper.viewmodel.MvpViewModel
+import com.vershininds.mixture.interactor.MvpInteractor
 
 interface AddEventInteractorContract {
     interface Interactor : MvpInteractor<Presenter> {

@@ -1,8 +1,8 @@
 package ru.pavlov.palestra.presentation.modules.event.create.parent.router
 
+import com.vershininds.mixture.view.AndroidComponent
 import palestra.kotlin.R
-import palestra.viper.router.AbstractRouter
-import palestra.viper.view.AndroidComponent
+import ru.pavlov.palestra.presentation.arch.AbstractRouter
 import ru.pavlov.palestra.presentation.modules.event.create.addevent.AddEventModuleContract
 import ru.pavlov.palestra.presentation.modules.event.create.addevent.view.fragment.AddEventFirstStepFragment
 import ru.pavlov.palestra.presentation.modules.event.create.addevent.view.fragment.AddEventSecondStepFragment

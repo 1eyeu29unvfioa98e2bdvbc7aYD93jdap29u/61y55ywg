@@ -1,7 +1,7 @@
 package ru.pavlov.palestra.presentation.modules.welcome.welcomeparent.contract
 
-import palestra.viper.presenter.MvpPresenter
-import palestra.viper.viewmodel.MvpViewModel
+import com.vershininds.mixture.presenter.MvpPresenter
+import com.vershininds.mixture.viewmodel.MvpViewModel
 
 interface WelcomeViewModelContract {
     interface ViewModel : MvpViewModel {}

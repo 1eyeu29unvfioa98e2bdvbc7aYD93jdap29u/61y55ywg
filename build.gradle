@@ -68,7 +68,10 @@ ext.versions = [
         //tests
         junit                 : "4.12",
         runner                : "1.0.1",
-        espresso              : "3.0.1"
+        espresso              : "3.0.1",
+
+        //viper
+        viper                 : "0.1.1"
 ]
 
 ext.jetbrains = [
@@ -130,4 +133,9 @@ ext.test = [
         junit   : "junit:junit:$versions.junit",
         runner  : "com.android.support.test:runner:$versions.runner",
         espresso: "com.android.support.test.espresso:espresso-core:$versions.espresso"
+]
+
+ext.viper = [
+        vershinindsViper : "com.github.vershininds:mixture:$versions.viper",
+        vershinindsRx2Interactor : "com.github.vershininds:mixture-rx2interactor:$versions.viper"
 ]

@@ -1,6 +1,7 @@
 package palestra.design.widgets.imagepane;
 
 import android.content.Context;
+import android.content.res.Resources;
 import android.content.res.TypedArray;
 import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
@@ -42,6 +43,7 @@ public class ImagePane extends LinearLayout {
     private interface AddItemCallBack {
         void onItemAdded(int itemsSize);
     }
+
 
     private interface RemoveItemCallBack {
         void onItemRemoved(int itemsSize, int itemRemovedIndex, boolean isVisibleItem);
@@ -300,25 +302,11 @@ public class ImagePane extends LinearLayout {
         allVisibleViews.add(clusterView);
 
         addView(clusterView);
-
-
-        /*** Debug View */
-        final int itemSize = imageSizeDp != 0 ? imageSizeDp : Math.min(getMeasuredHeight(), getMeasuredWidth());
-        TextView debugView = new TextView(getContext());
-        final LinearLayout.LayoutParams debugParams = new LinearLayout.LayoutParams(
-                ViewGroup.LayoutParams.WRAP_CONTENT,
-                ViewGroup.LayoutParams.WRAP_CONTENT
-        );
-        debugView.setMaxLines(1);
-        debugView.setEllipsize(TextUtils.TruncateAt.END);
-        debugView.setText("DevValue: " + String.valueOf(itemSize));
-        debugView.setLayoutParams(debugParams);
-        addView(debugView);
     }
 
     private CardView createRootBox(ImageView childView) {
         final CardView rootBox = new CardView(getContext());
-//        final int itemSize = imageSizeDp != 0 ? imageSizeDp : Math.min(getMeasuredHeight(), getMeasuredWidth());
+
         final LinearLayout.LayoutParams rootBoxParams = new LinearLayout.LayoutParams(
                 imageSizeDp,
                 imageSizeDp
@@ -340,9 +328,8 @@ public class ImagePane extends LinearLayout {
 
     private ImageView createImageBox() {
         final ImageView imageBox = new ImageView(getContext());
-        final int itemSize = imageSizeDp != 0 ? imageSizeDp : Math.min(getMeasuredHeight(), getMeasuredWidth());
         final FrameLayout.LayoutParams boxParams = new FrameLayout.LayoutParams(
-                ViewGroup.LayoutParams.MATCH_PARENT, //todo Match_parent ?
+                ViewGroup.LayoutParams.MATCH_PARENT,
                 ViewGroup.LayoutParams.MATCH_PARENT
         );
         imageBox.setImageResource(imageBackground);
@@ -353,7 +340,7 @@ public class ImagePane extends LinearLayout {
 
     private CardView createRootBoxCluster() {
         rootBoxCluster = new CardView(getContext());
-//        final int itemSize = clusterSizeDp != 0 ? clusterSizeDp : Math.min(getMeasuredHeight(), getMeasuredWidth());
+
         final LinearLayout.LayoutParams rootBoxClusterParams = new LinearLayout.LayoutParams(
                 clusterSizeDp,
                 clusterSizeDp
@@ -378,6 +365,8 @@ public class ImagePane extends LinearLayout {
 
     private TextView createClusterText() {
         clusterTextView = new TextView(getContext());
+        if(isInEditMode())    clusterTextView.setText(String.format(DEFAULT_TEXT_FORMAT, String.valueOf(15)));
+
         final FrameLayout.LayoutParams clusterTextViewParams = new FrameLayout.LayoutParams(
                 ViewGroup.LayoutParams.WRAP_CONTENT,
                 ViewGroup.LayoutParams.WRAP_CONTENT
@@ -441,8 +430,6 @@ public class ImagePane extends LinearLayout {
         final int ANIM_DURATION = 70;
         final float TRANSLATION_DISTANCE = clusterSizeDp - dp2px(getContext(), 30);
 
-        int finalValue = currentValue/*increment ? ++currentValue : --currentValue*/;
-
         textview.animate()
                 .alpha(0.05f)
                 .setDuration(ANIM_DURATION)
@@ -455,7 +442,7 @@ public class ImagePane extends LinearLayout {
                             .translationY(0f)
                             .setDuration(ANIM_DURATION)
                             .setInterpolator(new LinearInterpolator())
-                            .withStartAction(() -> textview.setText(String.format(DEFAULT_TEXT_FORMAT, String.valueOf(finalValue))))
+                            .withStartAction(() -> textview.setText(String.format(DEFAULT_TEXT_FORMAT, String.valueOf(currentValue))))
                             .start();
                 }).start();
     }
@@ -530,7 +517,7 @@ public class ImagePane extends LinearLayout {
 
     private void configureGlide(ImageView imageView, String imgUrl) {
         if (imageStubLoadingDrawable == null) {
-            throw new NullPointerException("Image stub must be initialed");
+            throw new Resources.NotFoundException("Image stub must be initialed");
         }
 
         RequestOptions options = new RequestOptions()

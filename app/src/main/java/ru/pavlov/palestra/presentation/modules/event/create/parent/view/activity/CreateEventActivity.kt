@@ -4,9 +4,9 @@ import android.content.Context
 import android.content.Intent
 import android.databinding.DataBindingUtil
 import android.os.Bundle
+import com.vershininds.mixture.view.AbstractActivity
 import palestra.kotlin.R
 import palestra.kotlin.databinding.ActivityAddEventParentBinding
-import palestra.viper.view.AbstractActivity
 import ru.pavlov.palestra.application.di.PalestraComponentProvider
 import ru.pavlov.palestra.presentation.modules.event.create.parent.contract.CreateEventVmContract
 import ru.pavlov.palestra.presentation.modules.event.create.parent.di.CreateEventHostComponent
@@ -35,7 +35,8 @@ class CreateEventActivity : AbstractActivity<CreateEventVmContract.ViewModel, Cr
 
     override fun createPresenter(): CreateEventVmContract.Presenter = diComponent.getPresenter()
 
-    override fun createViewModel(): CreateEventVmContract.ViewModel = diComponent.getViewModel()
+
+//    override fun createViewModel(): CreateEventVmContract.ViewModel = diComponent.getViewModel()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

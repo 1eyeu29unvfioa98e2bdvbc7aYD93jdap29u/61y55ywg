@@ -1,8 +1,8 @@
 package ru.pavlov.palestra.presentation.modules.event.create.parent.contract
 
 import android.support.annotation.NonNull
-import palestra.viper.router.MvpRouter
-import palestra.viper.view.AndroidComponent
+import com.vershininds.mixture.router.MvpRouter
+import com.vershininds.mixture.view.AndroidComponent
 
 interface CreateEventRouterContract {
     interface Presenter : MvpRouter.Listener {

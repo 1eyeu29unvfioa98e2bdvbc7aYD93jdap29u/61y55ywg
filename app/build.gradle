@@ -36,7 +36,7 @@ android {
 dependencies {
     //otherModules
     implementation project(":design")
-    implementation project(":viper")
+//    implementation project(":viper")
 
     //Kotlin
     implementation jetbrains.kotlin
@@ -75,6 +75,10 @@ dependencies {
     implementation rx.rxAndroid
     implementation rx.rxJava2debug
     implementation rx.rxBinding2
+
+    //Viper
+    implementation viper.vershinindsViper
+    implementation viper.vershinindsRx2Interactor
 
     //tests
     implementation fileTree(dir: 'libs', include: ['*.jar'])

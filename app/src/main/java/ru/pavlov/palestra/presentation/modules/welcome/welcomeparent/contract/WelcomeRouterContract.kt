@@ -1,6 +1,6 @@
 package ru.pavlov.palestra.presentation.modules.welcome.welcomeparent.contract
 
-import palestra.viper.router.MvpRouter
+import com.vershininds.mixture.router.MvpRouter
 
 interface WelcomeRouterContract {
     interface Router : MvpRouter<Presenter> {

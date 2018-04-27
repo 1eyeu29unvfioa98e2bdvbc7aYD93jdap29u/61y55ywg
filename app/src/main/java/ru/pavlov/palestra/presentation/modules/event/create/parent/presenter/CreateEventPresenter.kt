@@ -1,12 +1,13 @@
 package ru.pavlov.palestra.presentation.modules.event.create.parent.presenter
 
-import palestra.viper.presenter.AbstractPresenter
-import palestra.viper.view.AndroidComponent
+import com.vershininds.mixture.presenter.AbstractPresenter
+import com.vershininds.mixture.view.AndroidComponent
 import ru.pavlov.palestra.presentation.modules.event.create.parent.contract.CreateEventRouterContract
 import ru.pavlov.palestra.presentation.modules.event.create.parent.contract.CreateEventVmContract
+import ru.pavlov.palestra.presentation.modules.event.create.parent.viewmodel.CreateEventViewModel
 import javax.inject.Inject
 
-class CreateEventPresenter() : AbstractPresenter<CreateEventVmContract.ViewModel>(),
+class CreateEventPresenter() : AbstractPresenter<CreateEventVmContract.ViewModel>(CreateEventViewModel()),
         CreateEventVmContract.Presenter, CreateEventRouterContract.Presenter {
 
     private lateinit var router: CreateEventRouterContract.Router
@@ -16,12 +17,12 @@ class CreateEventPresenter() : AbstractPresenter<CreateEventVmContract.ViewModel
 
     }
 
-    override fun attachView(viewModel: CreateEventVmContract.ViewModel?, component: AndroidComponent?) {
-        super.attachView(viewModel, component)
+    override fun attachView(component: AndroidComponent?) {
+        super.attachView(component)
 
         router.apply {
             setListener(this@CreateEventPresenter)
-            showFirstStep(androidComponent)
+            applyAction(this::showFirstStep)
         }
 
     }
@@ -31,11 +32,11 @@ class CreateEventPresenter() : AbstractPresenter<CreateEventVmContract.ViewModel
     }
 
     override fun nextStepClick() {
-        router.showSecondStep(androidComponent)
+        applyAction(router::showSecondStep)
     }
 
     override fun onBackPressed() {
-        router.goBack(androidComponent)
+        applyAction(router::goBack)
     }
 
 
