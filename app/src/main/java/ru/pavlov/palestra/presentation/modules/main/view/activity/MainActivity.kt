@@ -2,16 +2,12 @@ package ru.pavlov.palestra.presentation.modules.main.view.activity
 
 import android.databinding.DataBindingUtil
 import android.os.Bundle
-import android.support.design.widget.BottomNavigationView
 import android.support.v4.app.Fragment
 import android.support.v4.app.FragmentManager
 import android.support.v7.app.AppCompatActivity
-import android.view.MenuItem
-import com.ashokvarma.bottomnavigation.BottomNavigationBar
 import com.ashokvarma.bottomnavigation.BottomNavigationItem
 import palestra.kotlin.R
 import palestra.kotlin.databinding.ActivityMainBinding
-import ru.pavlov.palestra.presentation.modules.event.create.addevent.view.fragment.AddEventFirstStepFragment
 import ru.pavlov.palestra.presentation.modules.event.show.eventlist.view.fragment.EventsFragment
 
 class MainActivity : AppCompatActivity() {

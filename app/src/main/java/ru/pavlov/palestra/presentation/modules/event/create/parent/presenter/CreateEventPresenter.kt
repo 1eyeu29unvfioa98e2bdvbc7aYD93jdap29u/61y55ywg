@@ -7,15 +7,9 @@ import ru.pavlov.palestra.presentation.modules.event.create.parent.contract.Crea
 import ru.pavlov.palestra.presentation.modules.event.create.parent.viewmodel.CreateEventViewModel
 import javax.inject.Inject
 
-class CreateEventPresenter() : AbstractPresenter<CreateEventVmContract.ViewModel>(CreateEventViewModel()),
+class CreateEventPresenter @Inject constructor(
+        val router: CreateEventRouterContract.Router) : AbstractPresenter<CreateEventVmContract.ViewModel>(CreateEventViewModel()),
         CreateEventVmContract.Presenter, CreateEventRouterContract.Presenter {
-
-    private lateinit var router: CreateEventRouterContract.Router
-
-    @Inject constructor(router: CreateEventRouterContract.Router) : this() {
-        this.router = router
-
-    }
 
     override fun attachView(component: AndroidComponent?) {
         super.attachView(component)

@@ -18,7 +18,8 @@
             <enum name="BOLD_ITALIC" value="3"/>
         </attr>
         <attr name="ip_cluster_text_color" format="reference|color"/>
-        <attr name="ip_cluster_background" format="reference"/>
+        <attr name="ip_cluster_text_font" format="reference"/>
+        <attr name="ip_cluster_background_color" format="color"/>
         <attr name="ip_cluster_corner_radius" format="integer|float"/>
 
         <attr name="ip_show_items_count" format="reference|integer"/>

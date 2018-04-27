@@ -11,6 +11,7 @@ import palestra.kotlin.R
 import palestra.kotlin.databinding.FragmentEventsListBinding
 import ru.pavlov.palestra.data.models.presentation.Event
 import ru.pavlov.palestra.data.models.presentation.EventsType
+import ru.pavlov.palestra.presentation.modules.event.show.detailinfo.view.fragment.DetailEventFragment
 import ru.pavlov.palestra.presentation.modules.event.show.eventlist.view.adapter.EventsAdapter
 import java.util.*
 
@@ -20,11 +21,11 @@ class EventsFragment : Fragment() {
     private lateinit var eventsAdapter: EventsAdapter
 
     companion object {
-        fun newInstance(): EventsFragment {
+        fun newInstance(): DetailEventFragment {
             val args = Bundle()
 //        args.putSerializable(ARG_CAUGHT, caught)
 
-            val fragment = EventsFragment()
+            val fragment = DetailEventFragment()
             fragment.arguments = args
             return fragment
         }

@@ -6,6 +6,7 @@ import android.content.res.TypedArray;
 import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
 import android.support.annotation.Nullable;
+import android.support.v4.content.res.ResourcesCompat;
 import android.support.v7.widget.CardView;
 import android.text.TextUtils;
 import android.util.AttributeSet;
@@ -55,6 +56,7 @@ public class ImagePane extends LinearLayout {
     private static final int DEFAULT_CLUSTER_SIZE_DP = 44;
     private static final int DEFAULT_CLUSTER_TEXT_SIZE_SP = 16;
     private static final int DEFAULT_CLUSTER_TEXT_STYLE = Typeface.NORMAL;
+    private static final Typeface DEFAULT_CLUSTER_TEXT_FONT = Typeface.DEFAULT;
     private static final int DEFAULT_CLUSTER_TEXT_COLOR = 0XFFF56313;  //orange color;
     private static final int DEFAULT_CLUSTER_BACKGROUND_COLOR = 0XFF56FFEF;  //white color
     private static final int DEFAULT_SHOW_ITEMS_COUNT = 2;
@@ -77,6 +79,7 @@ public class ImagePane extends LinearLayout {
     private int clusterTextSizeSp = DEFAULT_CLUSTER_TEXT_SIZE_SP;
     private int clusterTextColor = DEFAULT_CLUSTER_TEXT_COLOR;
     private int clusterTextStyle = DEFAULT_CLUSTER_TEXT_STYLE;
+    private Typeface clusterTextFont = DEFAULT_CLUSTER_TEXT_FONT;
     private int clusterBackground = DEFAULT_CLUSTER_BACKGROUND_COLOR;
     private float clusterCornerRadius = DEFAULT_CORNER_RADIUS;
     private int showItemsCount = DEFAULT_SHOW_ITEMS_COUNT;
@@ -216,8 +219,13 @@ public class ImagePane extends LinearLayout {
                 clusterTextColor = typedArray.getColor(attr, DEFAULT_CLUSTER_TEXT_COLOR);
             } else if (attr == R.styleable.ImagePane_ip_cluster_text_style) {
                 clusterTextStyle = typedArray.getInt(attr, DEFAULT_CLUSTER_TEXT_STYLE);
-            } else if (attr == R.styleable.ImagePane_ip_cluster_background) {
-                clusterBackground = typedArray.getResourceId(attr, DEFAULT_CLUSTER_BACKGROUND_COLOR);
+            } else if (attr == R.styleable.ImagePane_ip_cluster_text_font) {
+                if (!isInEditMode()) {
+                    final int fontId = typedArray.getResourceId(attr, -1);
+                    clusterTextFont = ResourcesCompat.getFont(context, fontId);
+                }
+            } else if (attr == R.styleable.ImagePane_ip_cluster_background_color) {
+                clusterBackground = typedArray.getColor(attr, DEFAULT_CLUSTER_BACKGROUND_COLOR);
             } else if (attr == R.styleable.ImagePane_ip_cluster_corner_radius) {
                 clusterCornerRadius = typedArray.getFloat(attr, DEFAULT_CORNER_RADIUS);
             } else if (attr == R.styleable.ImagePane_ip_show_items_count) {
@@ -329,8 +337,8 @@ public class ImagePane extends LinearLayout {
     private ImageView createImageBox() {
         final ImageView imageBox = new ImageView(getContext());
         final FrameLayout.LayoutParams boxParams = new FrameLayout.LayoutParams(
-                ViewGroup.LayoutParams.MATCH_PARENT,
-                ViewGroup.LayoutParams.MATCH_PARENT
+                imageSizeDp,
+                imageSizeDp
         );
         imageBox.setImageResource(imageBackground);
         imageBox.setLayoutParams(boxParams);
@@ -348,7 +356,7 @@ public class ImagePane extends LinearLayout {
         rootBoxCluster.setLayoutParams(rootBoxClusterParams);
 
         rootBoxCluster.setRadius(clusterCornerRadius);
-        rootBoxCluster.setBackgroundResource(clusterBackground);
+        rootBoxCluster.setCardBackgroundColor(clusterBackground);
 
         rootBoxCluster.addView(createClusterText());
 
@@ -365,7 +373,8 @@ public class ImagePane extends LinearLayout {
 
     private TextView createClusterText() {
         clusterTextView = new TextView(getContext());
-        if(isInEditMode())    clusterTextView.setText(String.format(DEFAULT_TEXT_FORMAT, String.valueOf(15)));
+        if (isInEditMode())
+            clusterTextView.setText(String.format(DEFAULT_TEXT_FORMAT, String.valueOf(15)));
 
         final FrameLayout.LayoutParams clusterTextViewParams = new FrameLayout.LayoutParams(
                 ViewGroup.LayoutParams.WRAP_CONTENT,
@@ -377,7 +386,10 @@ public class ImagePane extends LinearLayout {
         clusterTextView.setTextColor(clusterTextColor);
         clusterTextView.setTextSize(clusterTextSizeSp);
         clusterTextView.setMaxLines(DEFAULT_CLUSTER_TEXT_LINES_COUNT);
-        clusterTextView.setTypeface(Typeface.defaultFromStyle(clusterTextStyle));
+
+        clusterTextView.setTypeface(/*isInEditMode() ?*/
+//                Typeface.defaultFromStyle(clusterTextStyle) :
+                Typeface.create(clusterTextFont, clusterTextStyle));
         clusterTextView.setEllipsize(TextUtils.TruncateAt.END);
 
         return clusterTextView;
@@ -544,3 +556,4 @@ public class ImagePane extends LinearLayout {
         return (int) (dpValue * densityScale + 0.5f);
     }
 }
+

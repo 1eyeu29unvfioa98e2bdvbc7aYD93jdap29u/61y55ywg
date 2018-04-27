@@ -18,11 +18,36 @@
         <item name="android:fontFamily">@font/open_sans_light</item>
     </style>
 
+    <!-- ======== Dividers ======== -->
+    <!--<style name="DividerHorizontalConstraint">-->
+        <!--<item name="app:layout_constraintEnd_toEndOf">parent</item>-->
+        <!--<item name="app:layout_constraintStart_toStartOf">parent</item>-->
+    <!--</style>-->
+
+    <!-- ======== Buttons ======== -->
     <!-- Event list top buttons -->
     <style name="TopButtons" parent="android:Widget.TextView">
         <item name="android:gravity">center_vertical</item>
         <item name="android:textSize">20sp</item>
         <item name="android:textAllCaps">true</item>
+    </style>
+
+    <style name="ButtonEnter">
+        <item name="android:clickable">true</item>
+        <item name="android:focusable">true</item>
+        <item name="android:background">@drawable/ripple_btn_enter</item>
+    </style>
+
+    <style name="ButtonNotEnter">
+        <item name="android:clickable">true</item>
+        <item name="android:focusable">true</item>
+        <item name="android:background">@drawable/ripple_btn_not_enter</item>
+    </style>
+
+    <style name="ButtonChat">
+        <item name="android:clickable">true</item>
+        <item name="android:focusable">true</item>
+        <item name="android:background">@drawable/ripple_btn_chat</item>
     </style>
 
 </resources>

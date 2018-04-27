@@ -4,15 +4,13 @@
         xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-        <!--todo ViewModel, если все хорошо введено, то меняем backgroud кнопки-->
 
-        <!--todo здесь же меняем текст кнопки-->
     </data>
 
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:background="@drawable/welcome_button">      <!-- < Вот здесь -->
+        style="@style/ButtonEnter"
+        android:layout_height="48dp">      <!-- < Вот здесь -->
 
         <TextView
             android:id="@+id/txt_enter"
@@ -40,4 +38,5 @@
             app:layout_constraintTop_toTopOf="parent"/>
 
     </android.support.constraint.ConstraintLayout>
+
 </layout>

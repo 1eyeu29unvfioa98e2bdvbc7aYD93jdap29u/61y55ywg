@@ -131,6 +131,7 @@
             app:layout_constraintStart_toEndOf="@+id/txt_event_category"
             tools:text="18+"/>
 
+        <!-- todo: databinding Цвет рамки будет в зависимости от типа события -->
         <!-- todo: Необходимо научиться понимать, сколько элементов, я смогу вместить. -->
         <!-- Можно брать размер экрана, и делить на размер одной рамки. Исходя из расчетов поймем, сколько влезает -->
         <palestra.design.widgets.imagepane.ImagePane
@@ -141,61 +142,19 @@
             android:divider="@drawable/persons_divider"
             android:orientation="horizontal"
             android:showDividers="middle"
-            app:ip_cluster_background="@color/colorPrimary"
+            app:ip_cluster_background_color="@color/colorPrimary"
             app:ip_cluster_corner_radius="@dimen/person_photo_corner_radius"
             app:ip_cluster_size="@dimen/person_photo_size"
+            app:ip_cluster_text_font="@font/open_sans_light"
             app:ip_cluster_text_color="@android:color/white"
             app:ip_cluster_text_size="10sp"
             app:ip_image_corner_radius="@dimen/person_photo_corner_radius"
             app:ip_image_size="@dimen/person_photo_size"
-            app:ip_show_items_count="4"
+            app:ip_show_items_count="3"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/guideline_begin"
             app:layout_constraintTop_toBottomOf="@+id/txt_event_category"
             tools:background="#1ee"/>
-        <!--<LinearLayout-->
-        <!--android:id="@+id/persons_container"-->
-        <!--android:layout_width="0dp"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:layout_marginTop="@dimen/event_horizontal_divider_height"-->
-        <!--android:divider="@drawable/persons_divider"-->
-        <!--android:orientation="horizontal"-->
-        <!--android:showDividers="middle"-->
-        <!--app:layout_constraintEnd_toEndOf="parent"-->
-        <!--app:layout_constraintStart_toEndOf="@+id/guideline_begin"-->
-        <!--app:layout_constraintTop_toBottomOf="@+id/txt_event_category"-->
-        <!--tools:background="#1ee">-->
-
-        <!--<ImageView-->
-        <!--android:id="@+id/img_first_person"-->
-        <!--android:layout_width="@dimen/person_photo_size"-->
-        <!--android:layout_height="@dimen/person_photo_size"-->
-        <!--android:src="@drawable/person_photo_background_temp"/>-->
-
-        <!--<ImageView-->
-        <!--android:id="@+id/img_second_person"-->
-        <!--android:layout_width="@dimen/person_photo_size"-->
-        <!--android:layout_height="@dimen/person_photo_size"-->
-        <!--android:src="@drawable/person_photo_background_temp"/>-->
-
-        <!--<ImageView-->
-        <!--android:id="@+id/img_third_person"-->
-        <!--android:layout_width="@dimen/person_photo_size"-->
-        <!--android:layout_height="@dimen/person_photo_size"-->
-        <!--android:src="@drawable/person_photo_background_temp"/>-->
-
-        <!--&lt;!&ndash; todo: databinding Цвет рамки будет в зависимости от типа события &ndash;&gt;-->
-        <!--<TextView-->
-        <!--android:id="@+id/img_all_persons"-->
-        <!--android:layout_width="@dimen/person_photo_size"-->
-        <!--android:layout_height="@dimen/person_photo_size"-->
-        <!--android:background="@drawable/person_photo_background_temp"-->
-        <!--android:gravity="center"-->
-        <!--android:text="+13"-->
-        <!--android:textColor="@color/colorWhite100"-->
-        <!--android:textSize="18sp"/>-->
-
-        <!--</LinearLayout>-->
 
         <View
             android:layout_width="0dp"

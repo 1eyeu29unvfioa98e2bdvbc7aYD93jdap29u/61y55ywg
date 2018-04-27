@@ -10,12 +10,17 @@
     <color name="colorWhite100">#FFFFFFFF</color>   <!-- 100% -->
     <color name="colorWhite20">#80FFFFFF</color>    <!-- 20% -->
 
-    <color name="colorGreen100">#2ED573</color>     <!-- 100% -->
+    <color name="colorGreen1">#2ED573</color>
+    <color name="colorGreen2">#209951</color>
 
     <color name="colorGray1">#333333</color>
     <color name="colorGray2">#9EA4AF</color>
     <color name="colorGray3">#E0E0E0</color>
     <color name="colorGray4">#F2F2F2</color>
+    <color name="colorGray5">#80000000</color>
+
+    <color name="colorRed1">#FF5555</color>
+    <color name="colorRed2">#DB4A4A</color>
 
     <!-- Welcome Card -->
     <color name="welcomeCardTitleColor">@color/colorGray1</color>
@@ -23,7 +28,7 @@
 
     <color name="welcomeCardSliderDotActive">#FFFFFF</color>
     <color name="welcomeCardSliderDotInactive">#303030</color>
-    <color name="welcomeCardButtonBackground">@color/colorGreen100</color>
+    <color name="welcomeCardButtonBackground">@color/colorGreen1</color>
 
     <!-- Auth activity -->
     <color name="authHintColor">#9EA4AF</color>
@@ -40,11 +45,12 @@
     <color name="color_event_title">@color/colorGray1</color>
     <color name="color_event_coordinate">@color/colorGray2</color>
     <color name="color_event_time">@color/colorGray2</color>
+    <color name="color_event_date">@color/colorGray1</color>
     <color name="color_event_category">@color/colorGray3</color>
     <color name="color_event_olg">@color/colorGray3</color>
 
     <!-- EventType colors -->
-    <color name="color_no_fun_event_type">#FF5555</color>
+    <color name="color_no_fun_event_type">@color/colorRed1</color>
     <color name="color_fun_event_type">#2ED573</color>
     <color name="color_middle_fun_event_type">#FF55ff</color>
 

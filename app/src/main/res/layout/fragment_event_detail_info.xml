@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!--todo: макет нуждается в доработке -->
+
+    <data>
+
+        <variable
+            name="event"
+            type="ru.pavlov.palestra.data.models.presentation.Event" />
+
+    </data>
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="40dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="40dp"
+        app:cardCornerRadius="10dp"
+        app:elevation="4dp">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp">
+
+            <TextView
+                android:id="@+id/txt_event_title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:fontFamily="@font/open_sans_light"
+                android:maxLines="1"
+                android:textColor="@color/frag_efi_color_event_title"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toStartOf="@+id/btn_menu"
+                app:layout_constraintStart_toStartOf="@+id/guideline_percent_begin"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Баскетбольный вечерок" />
+
+            <ImageView
+                android:id="@+id/btn_menu"
+                android:layout_width="6dp"
+                android:layout_height="0dp"
+                android:src="@drawable/ic_menu_btn"
+                app:layout_constraintBottom_toBottomOf="@+id/txt_event_title"
+                app:layout_constraintEnd_toEndOf="@+id/guideline_percent_end"
+                app:layout_constraintTop_toTopOf="@+id/txt_event_title"
+                tools:ignore="ContentDescription" />
+
+            <TextView
+                android:id="@+id/txt_event_category"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/event_horizontal_divider_height"
+                android:text="@{event.eventType.eventsTypeText}"
+                android:textAllCaps="true"
+                android:textColor="@color/color_event_category"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@+id/guideline_percent_begin"
+                app:layout_constraintTop_toBottomOf="@+id/txt_event_title"
+                tools:text="Развлечение" />
+
+            <TextView
+                android:id="@+id/txt_event_old"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:text="@{event.eventOld}"
+                android:textColor="@color/color_event_olg"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintBaseline_toBaselineOf="@+id/txt_event_category"
+                app:layout_constraintStart_toEndOf="@+id/txt_event_category"
+                tools:text="18+" />
+
+            <palestra.design.widgets.imagepane.ImagePane
+                android:id="@+id/persons_container"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/event_horizontal_divider_height"
+                android:divider="@drawable/persons_divider"
+                android:orientation="horizontal"
+                android:showDividers="middle"
+                app:ip_cluster_background_color="@color/colorPrimary"
+                app:ip_cluster_corner_radius="@dimen/person_photo_corner_radius"
+                app:ip_cluster_size="@dimen/person_photo_size"
+                app:ip_cluster_text_color="@android:color/white"
+                app:ip_cluster_text_font="@font/open_sans_light"
+                app:ip_cluster_text_size="10sp"
+                app:ip_image_corner_radius="@dimen/person_photo_corner_radius"
+                app:ip_image_size="@dimen/person_photo_size"
+                app:ip_show_items_count="3"
+                app:layout_constraintEnd_toStartOf="@+id/barrier_event_date"
+                app:layout_constraintStart_toEndOf="@+id/guideline_percent_begin"
+                app:layout_constraintTop_toBottomOf="@+id/txt_event_category" />
+
+            <android.support.constraint.Barrier
+                android:id="@+id/barrier_event_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:constraint_referenced_ids="txt_event_date, txt_event_time" />
+
+            <TextView
+                android:id="@+id/txt_event_date"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textColor="@color/color_event_date"
+                android:textSize="14sp"
+                app:autoSizeMaxTextSize="14sp"
+                app:autoSizeMinTextSize="12sp"
+                app:autoSizeStepGranularity="2sp"
+                app:autoSizeTextType="uniform"
+                app:createEventTime="@{event}"
+                app:layout_constraintBottom_toTopOf="@+id/txt_event_time"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/guideline_percent_end"
+                app:layout_constraintTop_toTopOf="@+id/persons_container"
+                tools:text="13 июля" />
+
+            <TextView
+                android:id="@+id/txt_event_time"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textColor="@color/color_event_time"
+                android:textSize="14sp"
+                app:autoSizeMaxTextSize="14sp"
+                app:autoSizeMinTextSize="12sp"
+                app:autoSizeStepGranularity="2sp"
+                app:autoSizeTextType="uniform"
+                app:createEventTime="@{event}"
+                app:layout_constraintBottom_toBottomOf="@+id/persons_container"
+                app:layout_constraintEnd_toStartOf="@+id/guideline_percent_end"
+                app:layout_constraintTop_toBottomOf="@+id/txt_event_date"
+                tools:text="15:30 - 17:00" />
+
+            <!-- todo:менять стиль в зависимости иду я сюда или нет -->
+            <!-- style="@style/ButtonNotEnter"-->
+            <TextView
+                android:id="@+id/btn_enter"
+                style="@style/ButtonEnter"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/person_photo_size"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/open_sans_regular"
+                android:gravity="center"
+                android:text="@string/go_event_title"
+                android:textColor="@color/colorWhite100"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="@+id/guideline_percent_center"
+                app:layout_constraintStart_toEndOf="@+id/guideline_percent_begin"
+                app:layout_constraintTop_toBottomOf="@+id/persons_container" />
+
+            <ImageView
+                android:id="@+id/btn_chat"
+                style="@style/ButtonChat"
+                android:layout_width="@dimen/person_photo_size"
+                android:layout_height="@dimen/person_photo_size"
+                android:layout_marginStart="4dp"
+                android:padding="12dp"
+                android:src="@drawable/ic_chat"
+                app:layout_constraintBottom_toBottomOf="@+id/btn_enter"
+                app:layout_constraintStart_toEndOf="@+id/btn_enter"
+                app:layout_constraintTop_toTopOf="@+id/btn_enter" />
+
+            <TextView
+                android:id="@+id/txt_before_event_time_title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/go_event_before_event_title"
+                android:textColor="@color/colorGray2"
+                app:layout_constraintBottom_toTopOf="@+id/txt_before_event_time"
+                app:layout_constraintEnd_toStartOf="@+id/guideline_percent_end"
+                app:layout_constraintTop_toTopOf="@+id/btn_chat" />
+
+            <!--todo: need custom spanable  +  Рома будет перерисовывать-->
+            <TextView
+                android:id="@+id/txt_before_event_time"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="@+id/btn_chat"
+                app:layout_constraintEnd_toStartOf="@+id/guideline_percent_end"
+                app:layout_constraintTop_toBottomOf="@+id/txt_before_event_time_title"
+                tools:text="25 д 25:46" />
+
+            <ScrollView
+                android:id="@+id/container_event_description"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="20dp"
+                app:layout_constraintBottom_toTopOf="@+id/guideline_percent_description_bottom"
+                app:layout_constraintEnd_toStartOf="@+id/guideline_percent_end"
+                app:layout_constraintStart_toEndOf="@+id/guideline_percent_begin"
+                app:layout_constraintTop_toBottomOf="@+id/btn_enter">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    tools:text="@string/debug_large_text" />
+
+            </ScrollView>
+
+            <ImageView
+                android:id="@+id/img_map_marker"
+                android:layout_width="16dp"
+                android:layout_height="0dp"
+                android:src="@drawable/ic_map_marker"
+                app:layout_constraintBottom_toBottomOf="@+id/txt_event_coordinate"
+                app:layout_constraintStart_toEndOf="@+id/guideline_percent_begin"
+                app:layout_constraintTop_toTopOf="@+id/txt_event_coordinate" />
+
+            <TextView
+                android:id="@+id/txt_event_coordinate"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="@dimen/event_horizontal_divider_height"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:text="@{event.eventCoordinate}"
+                android:textColor="@color/color_event_coordinate"
+                android:textSize="16sp"
+                app:autoSizeMaxTextSize="16sp"
+                app:autoSizeMinTextSize="14sp"
+                app:autoSizeStepGranularity="2sp"
+                app:autoSizeTextType="uniform"
+                app:layout_constraintEnd_toStartOf="@+id/txt_event_time"
+                app:layout_constraintStart_toEndOf="@+id/img_map_marker"
+                app:layout_constraintTop_toBottomOf="@+id/container_event_description"
+                tools:text="Ленина 11, Иваново" />
+
+            <FrameLayout
+                android:id="@+id/map_container"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@drawable/shape_map_fragment"
+                android:foreground="@drawable/shape_map_fragment"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txt_event_coordinate"
+                tools:layout_editor_absoluteX="0dp"
+                tools:layout_editor_absoluteY="351dp" />
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_eye"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txt_event_coordinate"
+                tools:ignore="ContentDescription" />
+
+            <!-- ====== Guidelines ====== -->
+
+            <android.support.constraint.Guideline
+                android:id="@+id/guideline_percent_begin"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.04" />
+
+            <android.support.constraint.Guideline
+                android:id="@+id/guideline_percent_end"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.96" />
+
+            <android.support.constraint.Guideline
+                android:id="@+id/guideline_percent_center"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.425" />
+
+            <android.support.constraint.Guideline
+                android:id="@+id/guideline_percent_description_bottom"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.7" />
+
+        </android.support.constraint.ConstraintLayout>
+
+    </android.support.v7.widget.CardView>
+
+</layout>
