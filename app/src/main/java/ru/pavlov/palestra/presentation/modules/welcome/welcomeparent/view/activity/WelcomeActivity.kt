@@ -3,16 +3,26 @@ package ru.pavlov.palestra.presentation.modules.welcome.welcomeparent.view.activ
 import android.content.Context
 import android.content.Intent
 import android.databinding.DataBindingUtil
+import android.databinding.Observable
+import android.graphics.Matrix
+import android.graphics.RectF
+import android.os.Build
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
+import android.os.Parcelable
+import android.support.transition.Explode
+import android.support.transition.Transition
+import android.support.v4.app.SharedElementCallback
+import android.view.View
+import android.view.Window
 import com.vershininds.mixture.view.AbstractActivity
+import palestra.kotlin.BR
 import palestra.kotlin.R
 import palestra.kotlin.databinding.ActivityWelcomeBinding
-import ru.pavlov.palestra.data.models.presentation.WelcomeCard
+import ru.pavlov.palestra.application.di.PalestraComponentProvider
 import ru.pavlov.palestra.presentation.modules.welcome.welcomeparent.contract.WelcomeVmContract
 import ru.pavlov.palestra.presentation.modules.welcome.welcomeparent.di.WelcomeComponent
+import ru.pavlov.palestra.presentation.modules.welcome.welcomeparent.di.WelcomeDiModule
 import ru.pavlov.palestra.presentation.modules.welcome.welcomeparent.view.adapter.WelcomeViewHolderAdapter
-import java.util.*
 
 class WelcomeActivity : AbstractActivity<WelcomeVmContract.ViewModel, WelcomeVmContract.Presenter>() {
 
@@ -28,25 +38,49 @@ class WelcomeActivity : AbstractActivity<WelcomeVmContract.ViewModel, WelcomeVmC
     private lateinit var diComponent: WelcomeComponent
 
     override fun injectDi() {
-
+        diComponent = PalestraComponentProvider.getPalestraComponent(application)
+                .presentationComponents()
+                .welcomeComponent(WelcomeDiModule())
     }
 
     override fun createPresenter(): WelcomeVmContract.Presenter = diComponent.getPresenter()
 
+    override fun onStart() {
+        viewModel.addOnPropertyChangedCallback(vmObserver)
+        super.onStart()
+    }
+
+    override fun onStop() {
+        viewModel.removeOnPropertyChangedCallback(vmObserver)
+        super.onStop()
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         binding = DataBindingUtil.setContentView(this, R.layout.activity_welcome)
 
         binding.viewPager.apply {
-            slider.adapter = WelcomeViewHolderAdapter(this@WelcomeActivity, generate())
+            slider.adapter = WelcomeViewHolderAdapter(this@WelcomeActivity)
             binding.sliderIndicator.setupWithViewPager(slider)
+        }
+
+        binding.includeBtnEnter?.btnContainer?.setOnClickListener {
+            presenter.enterAppClick(binding.includeBtnEnter!!.btnContainer)
         }
     }
 
-    fun generate(): List<WelcomeCard> {
-        return Arrays.asList(
-                WelcomeCard(R.drawable.img_first_card, resources.getString(R.string.first_card_title), resources.getString(R.string.first_card_description)),
-                WelcomeCard(R.drawable.img_second_card, resources.getString(R.string.second_card_title), resources.getString(R.string.second_card_description)),
-                WelcomeCard(R.drawable.img_third_card, resources.getString(R.string.third_card_title), resources.getString(R.string.third_card_description)))
+    private val vmObserver = object : Observable.OnPropertyChangedCallback() {
+        override fun onPropertyChanged(observable: Observable, i: Int) {
+            val vm = viewModel
+            when (i) {
+                BR.welcomeCards -> {
+                    binding.viewPager.apply {
+                        (slider.adapter as WelcomeViewHolderAdapter).setItems(vm.welcomeCards)
+                        binding.sliderIndicator.setupWithViewPager(slider)
+                    }
+                }
+            }
+        }
     }
 }

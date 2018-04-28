@@ -6,7 +6,5 @@ import ru.pavlov.palestra.presentation.modules.registration.parent.view.Registra
 import javax.inject.Inject
 
 class RegistrationModule @Inject constructor() : RegistrationModuleContract {
-    override fun createIntent(context: Context): Intent {
-        return RegistrationActivity.createIntent(context)
-    }
+    override fun createIntent(context: Context) = RegistrationActivity.createIntent(context)
 }

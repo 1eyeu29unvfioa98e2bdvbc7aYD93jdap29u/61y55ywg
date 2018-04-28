@@ -75,7 +75,7 @@ ext.versions = [
 ]
 
 ext.jetbrains = [
-        kotlin          : "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlinVersion"
+        kotlin          : "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlinVersion"
 ]
 
 ext.glide = [

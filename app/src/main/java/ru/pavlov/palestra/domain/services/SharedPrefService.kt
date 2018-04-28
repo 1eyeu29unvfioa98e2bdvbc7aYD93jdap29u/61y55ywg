@@ -11,7 +11,7 @@ class SharedPrefService(val context: Context) {
     }
 
     fun setFirstLaunchApp(isFirstLaunch: Boolean) {
-        getDefaultSharedPrefferences()
+        getDefaultSharedPreferences()
                 .edit()
                 .putBoolean(IS_FIRST_LAUNCH_APP_KEY, isFirstLaunch)
                 .apply()
@@ -21,5 +21,5 @@ class SharedPrefService(val context: Context) {
 
     }
 
-    private fun getDefaultSharedPrefferences() = context.getSharedPreferences(DEFAULT_REPOSITORY_KEY, Context.MODE_PRIVATE)
+    private fun getDefaultSharedPreferences() = context.getSharedPreferences(DEFAULT_REPOSITORY_KEY, Context.MODE_PRIVATE)
 }

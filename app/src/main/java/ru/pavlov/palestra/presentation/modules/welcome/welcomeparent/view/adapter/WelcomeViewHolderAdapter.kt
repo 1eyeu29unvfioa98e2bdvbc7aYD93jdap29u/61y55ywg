@@ -11,10 +11,16 @@ import android.view.ViewGroup
 import palestra.kotlin.R
 import palestra.kotlin.databinding.FragmentWelcomeBinding
 import ru.pavlov.palestra.data.models.presentation.WelcomeCard
+import java.util.*
 
-class WelcomeViewHolderAdapter(
-        private val context: Context,
-        private val welcomeCards: List<WelcomeCard>) : PagerAdapter() {
+class WelcomeViewHolderAdapter(private val context: Context) : PagerAdapter() {
+
+    private var welcomeCards: List<WelcomeCard> = Collections.emptyList()
+
+    fun setItems(welcomeCards: List<WelcomeCard>) {
+        this.welcomeCards = welcomeCards
+        notifyDataSetChanged()
+    }
 
     override fun isViewFromObject(view: View, obj: Any): Boolean {
         return view == obj as ConstraintLayout
