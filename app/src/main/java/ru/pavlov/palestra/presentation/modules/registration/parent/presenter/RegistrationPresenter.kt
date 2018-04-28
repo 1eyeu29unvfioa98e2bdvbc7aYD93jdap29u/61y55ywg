@@ -9,7 +9,7 @@ import javax.inject.Inject
 
 class RegistrationPresenter @Inject constructor(
         val registrationInteractorContract: RegistrationInteractorContract.Interactor,
-        val registrationRouterContract: RegistrationRouterContract) : AbstractPresenter<RegistrationVmContract.ViewModel>(RegistrationViewModel()),
+        val registrationRouterContract: RegistrationRouterContract.Router) : AbstractPresenter<RegistrationVmContract.ViewModel>(RegistrationViewModel()),
         RegistrationVmContract.Presenter, RegistrationRouterContract.Presenter, RegistrationInteractorContract.Presenter {
 
 }

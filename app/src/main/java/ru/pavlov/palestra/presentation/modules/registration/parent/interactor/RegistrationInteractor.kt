@@ -9,5 +9,4 @@ class RegistrationInteractor @Inject constructor(
         val serviceMaker: ServiceMaker) : AbstractInteractor<RegistrationInteractorContract.Presenter>(),
         RegistrationInteractorContract.Interactor {
 
-
 }

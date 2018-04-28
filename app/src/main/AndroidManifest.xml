@@ -1,55 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="palestra.kotlin">
+    package="palestra.kotlin">
 
+    <!-- todo: AllowBackup -> false ????-->
     <application
         android:name="ru.pavlov.palestra.application.Application"
-        android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
+        android:allowBackup="false"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppBaseTheme">
 
+        <!-- todo: Add Splash activity -->
+
         <activity
             android:name="ru.pavlov.palestra.presentation.modules.welcome.welcomeparent.view.activity.WelcomeActivity"
+            android:noHistory="true"
             android:theme="@style/AppBaseTheme.WelcomeStyle">
+
             <intent-filter>
-            <action android:name="android.intent.action.MAIN"/>
-            <category android:name="android.intent.category.LAUNCHER"/>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
 
         <activity
             android:name="ru.pavlov.palestra.presentation.modules.authentication.view.activity.AuthActivity"
             android:theme="@style/AppBaseTheme.WelcomeStyle">
-            <!--<intent-filter>-->
-            <!--<action android:name="android.intent.action.MAIN" />-->
-            <!--<category android:name="android.intent.category.LAUNCHER" />-->
-            <!--</intent-filter>-->
+
         </activity>
 
         <activity
             android:name="ru.pavlov.palestra.presentation.modules.registration.parent.view.RegistrationActivity"
+            android:parentActivityName="ru.pavlov.palestra.presentation.modules.authentication.view.activity.AuthActivity"
             android:theme="@style/AppBaseTheme.WelcomeStyle">
-            <!--<intent-filter>-->
-            <!--<action android:name="android.intent.action.MAIN" />-->
-            <!--<category android:name="android.intent.category.LAUNCHER" />-->
-            <!--</intent-filter>-->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="ru.pavlov.palestra.presentation.modules.authentication.view.activity.AuthActivity" />
         </activity>
 
-        <activity android:name="ru.pavlov.palestra.presentation.modules.main.view.activity.MainActivity">
-            <!--<intent-filter>-->
-            <!--<action android:name="android.intent.action.MAIN"/>-->
-            <!--<category android:name="android.intent.category.LAUNCHER"/>-->
-            <!--</intent-filter>-->
+        <activity android:name="ru.pavlov.palestra.presentation.modules.main.view.activity.MainActivity"
+            android:parentActivityName="ru.pavlov.palestra.presentation.modules.authentication.view.activity.AuthActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="ru.pavlov.palestra.presentation.modules.authentication.view.activity.AuthActivity" />
         </activity>
 
-        <activity android:name="ru.pavlov.palestra.presentation.modules.event.create.parent.view.activity.CreateEventActivity">
-            <!--<intent-filter>-->
-                <!--<action android:name="android.intent.action.MAIN"/>-->
-                <!--<category android:name="android.intent.category.LAUNCHER"/>-->
-            <!--</intent-filter>-->
+        <activity android:name="ru.pavlov.palestra.presentation.modules.event.create.parent.view.activity.CreateEventActivity"
+            android:parentActivityName="ru.pavlov.palestra.presentation.modules.main.view.activity.MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="ru.pavlov.palestra.presentation.modules.main.view.activity.MainActivity" />
         </activity>
 
     </application>
