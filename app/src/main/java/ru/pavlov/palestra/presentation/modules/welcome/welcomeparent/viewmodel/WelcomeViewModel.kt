@@ -11,7 +11,8 @@ import java.util.*
 @Parcel
 class WelcomeViewModel : AbstractViewModel, WelcomeVmContract.ViewModel {
 
-    protected var _welcomeCards: List<WelcomeCard>
+    @JvmField
+    var _welcomeCards: List<WelcomeCard>
 
     constructor() : super() {
         _welcomeCards = Collections.emptyList()

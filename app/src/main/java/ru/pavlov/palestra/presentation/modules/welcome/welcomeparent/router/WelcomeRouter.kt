@@ -13,9 +13,10 @@ class WelcomeRouter @Inject constructor(
         private val authModuleContract: AuthModuleContract) : AbstractRouter<WelcomeRouterContract.Presenter>(), WelcomeRouterContract.Router {
 
     override fun showAuthScreen(androidComponent: AndroidComponent, sharedView: View) {
-        authModuleContract.createIntent(androidComponent.activity).apply {
+        val activity = androidComponent.activity
+        authModuleContract.createIntent(activity).apply {
             addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK)
-            displayActivityWithSharedView(androidComponent, this, sharedView, ViewCompat.getTransitionName(sharedView))
+            displayActivityWithSharedView(activity, this, sharedView, ViewCompat.getTransitionName(sharedView))
         }
     }
 }

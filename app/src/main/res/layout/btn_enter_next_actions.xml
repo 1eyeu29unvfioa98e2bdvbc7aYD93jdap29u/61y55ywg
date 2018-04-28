@@ -1,18 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <data>
 
+        <variable
+            name="title"
+            type="String" />
     </data>
 
     <android.support.constraint.ConstraintLayout
         android:id="@+id/btn_container"
-        android:layout_width="match_parent"
         style="@style/ButtonEnter"
-        android:transitionName="@string/shared_item_btn_enter"
+        android:layout_width="match_parent"
         android:layout_height="48dp"
+        android:transitionName="@string/shared_item_btn_enter"
         tools:targetApi="lollipop">
 
         <TextView
@@ -21,7 +24,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/open_sans_regular"
             android:paddingEnd="10dp"
-            android:text="@string/enter"
+            android:text="@{title}"
             android:textColor="@color/colorWhite100"
             android:textSize="18sp"
             android:textStyle="bold"
@@ -30,7 +33,8 @@
             app:layout_constraintHorizontal_chainStyle="packed"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:ignore="RtlSymmetry"/>
+            tools:ignore="RtlSymmetry"
+            tools:text="@string/enter" />
 
         <ImageView
             android:layout_width="wrap_content"
@@ -38,7 +42,7 @@
             android:src="@drawable/ic_arrow_right"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/txt_enter"
-            app:layout_constraintTop_toTopOf="parent"/>
+            app:layout_constraintTop_toTopOf="parent" />
 
     </android.support.constraint.ConstraintLayout>
 

@@ -41,6 +41,9 @@ class RegistrationActivity : AbstractActivity<RegistrationVmContract.ViewModel, 
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_registration)
 
+        binding.includeBtnNext?.apply {
+            title = getString(R.string.next)
+        }
 
     }
 }

@@ -1,5 +1,6 @@
 package ru.pavlov.palestra.presentation.arch
 
+import android.app.Activity
 import android.content.Intent
 import android.support.v4.app.ActivityOptionsCompat
 import android.support.v4.app.Fragment
@@ -29,8 +30,7 @@ abstract class AbstractRouter<L : MvpRouter.Listener> : AbstractRouter<L>() {
         }
     }
 
-    protected fun displayActivityWithSharedView(androidComponent: AndroidComponent, intent: Intent, sharedView: View, sharedViewName: String) {
-        val activity = androidComponent.activity
+    protected fun displayActivityWithSharedView(activity: Activity, intent: Intent, sharedView: View, sharedViewName: String) {
         val activityOptionsCompat =
                 ActivityOptionsCompat.makeSceneTransitionAnimation(activity, sharedView, sharedViewName).toBundle()
 

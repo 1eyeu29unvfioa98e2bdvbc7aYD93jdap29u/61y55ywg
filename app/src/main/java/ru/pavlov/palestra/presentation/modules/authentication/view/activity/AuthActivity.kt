@@ -38,5 +38,14 @@ class AuthActivity : AbstractActivity<AuthVmContract.ViewModel, AuthVmContract.P
 
         binding = DataBindingUtil.setContentView(this, R.layout.activity_authentication)
 
+        binding.includeBtnEnter?.apply {
+            title = getString(R.string.enter)
+        }
+
+        binding.txtGotoRegister.apply {
+            setOnClickListener {
+                presenter.onRegisterClick(binding.includeBtnEnter!!.btnContainer)
+            }
+        }
     }
 }

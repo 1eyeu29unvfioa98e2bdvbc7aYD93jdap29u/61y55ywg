@@ -65,8 +65,12 @@ class WelcomeActivity : AbstractActivity<WelcomeVmContract.ViewModel, WelcomeVmC
             binding.sliderIndicator.setupWithViewPager(slider)
         }
 
-        binding.includeBtnEnter?.btnContainer?.setOnClickListener {
-            presenter.enterAppClick(binding.includeBtnEnter!!.btnContainer)
+        binding.includeBtnEnter?.apply {
+            title = getString(R.string.enter)
+
+            btnContainer.setOnClickListener {
+                presenter.enterAppClick(binding.includeBtnEnter!!.btnContainer)
+            }
         }
     }
 
