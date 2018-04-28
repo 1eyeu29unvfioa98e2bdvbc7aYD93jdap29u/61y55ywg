@@ -2,7 +2,7 @@ package ru.pavlov.palestra.domain.services
 
 import android.content.Context
 
-class DefaultSharedPreffService(val context: Context) {
+class SharedPrefService(val context: Context) {
 
     companion object {
         const val DEFAULT_REPOSITORY_KEY = "Default_repository"
@@ -14,6 +14,7 @@ class DefaultSharedPreffService(val context: Context) {
         getDefaultSharedPrefferences()
                 .edit()
                 .putBoolean(IS_FIRST_LAUNCH_APP_KEY, isFirstLaunch)
+                .apply()
     }
 
     fun isFirstLaunchApp(isFirstStart: Boolean) {
