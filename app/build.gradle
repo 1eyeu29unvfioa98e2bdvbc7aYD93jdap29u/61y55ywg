@@ -36,7 +36,6 @@ android {
 dependencies {
     //otherModules
     implementation project(":design")
-//    implementation project(":viper")
 
     //Kotlin
     implementation jetbrains.kotlin
@@ -65,6 +64,7 @@ dependencies {
     kapt parceller.parcellerAnnotProc
 
     //GreenDao
+    implementation greenRobot.eventBus
 //    implementation greenRobot.greenDao
 
     //Network

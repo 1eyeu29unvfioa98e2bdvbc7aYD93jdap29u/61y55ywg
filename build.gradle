@@ -52,6 +52,7 @@ ext.versions = [
         //common
         androidSupport        : "27.1.1",
 //        dataBindingKotlin     : "3.0.0-alpha3",
+        eventBus              : "3.1.1",
         //greenDao              : "3.2.2",
         gson                  : "2.8.2",
         parceller             : "1.1.9",
@@ -110,9 +111,10 @@ ext.parceller = [
         parcellerAnnotProc: "org.parceler:parceler:$versions.parceller"
 ]
 
-//ext.greenRobot = [
+ext.greenRobot = [
+        eventBus          : "org.greenrobot:eventbus:$versions.eventBus"
 //        greenDao        : "org.greenrobot:greendao:$versions.greenDao"
-//]
+]
 
 ext.network = [
         gson: "com.google.code.gson:gson:$versions.gson"

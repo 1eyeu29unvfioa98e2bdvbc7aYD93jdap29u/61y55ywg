@@ -7,7 +7,7 @@ import palestra.kotlin.BR
 import ru.pavlov.palestra.presentation.modules.registration.parent.contract.RegistrationVmContract
 
 @Parcel
-class RegistrationViewModel : AbstractViewModel, RegistrationVmContract.ViewModel {
+class RegistrationViewModel : AbstractViewModel {
 
     @JvmField
     var _registrationStep: RegistrationVmContract.RegistrationSteps
