@@ -4,16 +4,7 @@ import android.content.Context
 import android.content.Intent
 import android.databinding.DataBindingUtil
 import android.databinding.Observable
-import android.graphics.Matrix
-import android.graphics.RectF
-import android.os.Build
 import android.os.Bundle
-import android.os.Parcelable
-import android.support.transition.Explode
-import android.support.transition.Transition
-import android.support.v4.app.SharedElementCallback
-import android.view.View
-import android.view.Window
 import com.vershininds.mixture.view.AbstractActivity
 import palestra.kotlin.BR
 import palestra.kotlin.R

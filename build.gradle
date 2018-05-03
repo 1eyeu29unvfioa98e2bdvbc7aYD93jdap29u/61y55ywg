@@ -2,6 +2,7 @@
 
 buildscript {
     ext.kotlinVersion = '1.2.40'
+    ext.kotlinxCoroutines = "0.22.5"
     ext.compilerVersion = '3.1.1'
 
     repositories {
@@ -75,7 +76,8 @@ ext.versions = [
 ]
 
 ext.jetbrains = [
-        kotlin          : "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlinVersion"
+        kotlin          : "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlinVersion",
+        kotlinCoroutines: "org.jetbrains.kotlinx:kotlinx-coroutines-core:$kotlinxCoroutines"
 ]
 
 ext.glide = [

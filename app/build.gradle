@@ -40,6 +40,7 @@ dependencies {
 
     //Kotlin
     implementation jetbrains.kotlin
+    implementation jetbrains.kotlinCoroutines
 
     //arch
     implementation arch.dagger2
