@@ -11,18 +11,21 @@ import palestra.kotlin.databinding.FragmentRegistrationFirstStepBinding
 
 class FirstStepFragment : Fragment() {
 
-    private lateinit var biding: FragmentRegistrationFirstStepBinding
+    companion object {
 
-    fun newInstance(): Fragment {
-        val fragment = FirstStepFragment()
+        fun newInstance(): Fragment {
+            val fragment = FirstStepFragment()
 
-        val args = Bundle()
+            val args = Bundle()
 //        args.putParcelable(ARG_ORDER, order)
 //        args.putParcelable(ARG_CURRENT_LOCATION, currentLocation)
-        fragment.setArguments(args)
+            fragment.arguments = args
 
-        return fragment
+            return fragment
+        }
     }
+
+    private lateinit var biding: FragmentRegistrationFirstStepBinding
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val binding: FragmentRegistrationFirstStepBinding = DataBindingUtil.inflate(
